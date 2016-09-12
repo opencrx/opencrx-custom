@@ -1,0 +1,6 @@
+/source-archive
+/jre-1.8
+/distribution
+/opt/opencrx*
+/opt/openmdx*
+/opt/*.sh

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.openmdx.base.Authority xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="org:opencrx:kernel:code1" xsi:noNamespaceSchemaLocation="xri://+resource/org/opencrx/kernel/code1/xmi1/code1.xsd">
+	<_object/>
+	<_content>
+		<provider>
+			<org.openmdx.base.Provider qualifiedName="CRX" _operation="null">
+				<_object/>
+				<_content>
+					<segment>
+						<org.opencrx.kernel.code1.Segment qualifiedName="Root" _operation="null">
+							<_object/>
+							<_content>
+								<valueContainer>
+									<org.opencrx.kernel.code1.CodeValueContainer name="strategy" _operation="set">
+										<_object>
+											<name>
+												<_item>org:opencrx:kernel:forecast1:Budget:userCode1</_item>
+											</name>
+										</_object>
+										<_content>
+											<entry>
+												<org.opencrx.kernel.code1.CodeValueEntry code="0" _operation="set">
+													<_object>
+														<shortText>
+															<_item>NA</_item>
+														</shortText>
+														<longText>
+															<_item> N/A</_item>
+														</longText>
+													</_object>
+													<_content/>
+												</org.opencrx.kernel.code1.CodeValueEntry>
+												<org.opencrx.kernel.code1.CodeValueEntry code="1" _operation="set">			
+													<_object>		
+														<shortText>	
+															<_item>allocation</_item>
+														</shortText>	
+														<longText>	
+															<_item>asset allocation</_item>
+														</longText>	
+													</_object>		
+													<_content/>		
+												</org.opencrx.kernel.code1.CodeValueEntry>			
+												<org.opencrx.kernel.code1.CodeValueEntry code="2" _operation="set">			
+													<_object>		
+														<shortText>	
+															<_item>EWB-h</_item>
+														</shortText>	
+														<longText>	
+															<_item>efficient world bond - hedged</_item>
+														</longText>	
+													</_object>		
+													<_content/>		
+												</org.opencrx.kernel.code1.CodeValueEntry>			
+												<org.opencrx.kernel.code1.CodeValueEntry code="3" _operation="set">			
+													<_object>		
+														<shortText>	
+															<_item>EWB-u</_item>
+														</shortText>	
+														<longText>	
+															<_item>efficient world bond - unhedged</_item>
+														</longText>	
+													</_object>		
+													<_content/>		
+												</org.opencrx.kernel.code1.CodeValueEntry>			
+												<org.opencrx.kernel.code1.CodeValueEntry code="4" _operation="set">			
+													<_object>		
+														<shortText>	
+															<_item>EWB-ex-h</_item>
+														</shortText>	
+														<longText>	
+															<_item>efficient world bond ex local - hedged</_item>
+														</longText>	
+													</_object>		
+													<_content/>		
+												</org.opencrx.kernel.code1.CodeValueEntry>			
+												<org.opencrx.kernel.code1.CodeValueEntry code="5" _operation="set">			
+													<_object>		
+														<shortText>	
+															<_item>EWB-ex-u</_item>
+														</shortText>	
+														<longText>	
+															<_item>efficient world bond ex local - unhedged</_item>
+														</longText>	
+													</_object>		
+													<_content/>		
+												</org.opencrx.kernel.code1.CodeValueEntry>			
+												<org.opencrx.kernel.code1.CodeValueEntry code="6" _operation="set">			
+													<_object>		
+														<shortText>	
+															<_item>EWE-h</_item>
+														</shortText>	
+														<longText>	
+															<_item>efficient world equity - hedged</_item>
+														</longText>	
+													</_object>		
+													<_content/>		
+												</org.opencrx.kernel.code1.CodeValueEntry>			
+												<org.opencrx.kernel.code1.CodeValueEntry code="7" _operation="set">			
+													<_object>		
+														<shortText>	
+															<_item>EWE-u</_item>
+														</shortText>	
+														<longText>	
+															<_item>efficient world equity - unhedged</_item>
+														</longText>	
+													</_object>		
+													<_content/>		
+												</org.opencrx.kernel.code1.CodeValueEntry>			
+												<org.opencrx.kernel.code1.CodeValueEntry code="8" _operation="set">			
+													<_object>		
+														<shortText>	
+															<_item>EWE-ex-h</_item>
+														</shortText>	
+														<longText>	
+															<_item>efficient world equity ex local - unhedged</_item>
+														</longText>	
+													</_object>		
+													<_content/>		
+												</org.opencrx.kernel.code1.CodeValueEntry>			
+												<org.opencrx.kernel.code1.CodeValueEntry code="9" _operation="set">			
+													<_object>		
+														<shortText>	
+															<_item>EWE-ex-u</_item>
+														</shortText>	
+														<longText>	
+															<_item>efficient world equity ex local - hedged</_item>
+														</longText>	
+													</_object>		
+													<_content/>		
+												</org.opencrx.kernel.code1.CodeValueEntry>			
+												<org.opencrx.kernel.code1.CodeValueEntry code="10" _operation="set">			
+													<_object>		
+														<shortText>	
+															<_item>SEO</_item>
+														</shortText>	
+														<longText>	
+															<_item>swiss equity optimized</_item>
+														</longText>	
+													</_object>		
+													<_content/>		
+												</org.opencrx.kernel.code1.CodeValueEntry>			
+												<org.opencrx.kernel.code1.CodeValueEntry code="11" _operation="set">			
+													<_object>		
+														<shortText>	
+															<_item>COMO</_item>
+														</shortText>	
+														<longText>	
+															<_item>commodities optimized</_item>
+														</longText>	
+													</_object>		
+													<_content/>		
+												</org.opencrx.kernel.code1.CodeValueEntry>			
+												<org.opencrx.kernel.code1.CodeValueEntry code="12" _operation="set">			
+													<_object>		
+														<shortText>	
+															<_item>FMO</_item>
+														</shortText>	
+														<longText>	
+															<_item>frontier markets optimized</_item>
+														</longText>	
+													</_object>		
+													<_content/>		
+												</org.opencrx.kernel.code1.CodeValueEntry>			
+											</entry>
+										</_content>
+									</org.opencrx.kernel.code1.CodeValueContainer>
+								</valueContainer>
+							</_content>
+						</org.opencrx.kernel.code1.Segment>
+					</segment>
+				</_content>
+			</org.openmdx.base.Provider>
+		</provider>
+	</_content>
+</org.openmdx.base.Authority>

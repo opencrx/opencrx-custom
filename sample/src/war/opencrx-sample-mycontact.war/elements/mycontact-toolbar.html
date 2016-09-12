@@ -1,0 +1,52 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/core-toolbar/core-toolbar.html">	
+<link rel="import" href="../bower_components/core-input/core-input.html">	
+<polymer-element name="mycontact-toolbar" attributes="appTitle">
+	<template>
+		<link rel="stylesheet" href="mycontact-toolbar.css">
+		<core-toolbar id="mainToolbar" class="mycontact-toolbar">
+			<div flex><h3>{{appTitle}}</h3></div>
+			<paper-icon-button icon="search" on-tap="{{showSearchToolbar}}"></paper-icon-button>
+		</core-toolbar>
+		<core-toolbar id="searchToolbar" class="mycontact-toolbar" style="display:none">
+			<paper-icon-button icon="search" on-tap="{{doSearch}}"></paper-icon-button>
+			<input is="core-input" id="searchInput" on-keyup="{{searchInputKeyupHandler}}" style="background-color:inherit;border:medium none;color:inherit;flex:1 0 0px;font-size:20px;outline:medium none;"></input>
+		</core-toolbar>
+	</template>
+	<script>
+		Polymer({
+			doSearch: function(closeSearchInput) {
+				if(closeSearchInput) {
+					this.$.mainToolbar.style.display = 'block';
+					this.$.searchToolbar.style.display = 'none';
+					this.$.searchInput.blur();
+				}
+				this.job(
+					"doSearchJob",
+					function(){
+						this.fire(
+							"do-search", {
+								value: this.$.searchInput.value.replace(/,/g, ".*").replace(/ /g, ".*") 
+							}
+						);
+					},
+					500
+				);
+			},
+			searchInputKeyupHandler: function(event, detail, sender) {
+				if(event.keyCode == 13) {
+					this.doSearch(true);
+				} else {
+					this.doSearch(false);
+				}
+			},
+			showSearchToolbar: function() {
+				this.$.mainToolbar.style.display = 'none';
+				this.$.searchToolbar.style.display = 'block';
+				this.$.searchInput.focus();
+				this.$.searchInput.value = '';
+			}
+		});
+	</script>
+</polymer-element>

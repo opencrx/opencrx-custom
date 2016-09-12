@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.openmdx.base.Authority name="org:opencrx:kernel:uom1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xri://+resource/org/opencrx/kernel/uom1/xmi1/uom1.xsd">
+    <_object/>
+    <_content>
+        <provider>
+            <org.openmdx.base.Provider qualifiedName="CRX" _operation="null">
+                <_object/>
+                <_content>
+                    <segment>
+                        <org.opencrx.kernel.uom1.Segment qualifiedName="Standard" _operation="null">
+                            <_object/>
+                            <_content>
+                                <uomSchedule>
+                                    <org.opencrx.kernel.uom1.UomSchedule id="Custom">
+                                        <_object>
+                                            <name>Custom</name>
+                                        </_object>
+                                        <_content/>
+                                    </org.opencrx.kernel.uom1.UomSchedule>
+                                </uomSchedule>
+                                <uom>
+                                    <org.opencrx.kernel.uom1.Uom id="Piece">
+                                        <_object>
+                                            <description>Piece(s)</description>
+                                            <isScheduleBaseUom>true</isScheduleBaseUom>
+                                            <name>Piece(s)</name>
+                                            <uomSchedule>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uomSchedule/Custom</uomSchedule>
+                                            <quantity>1.0</quantity>
+                                        </_object>
+                                        <_content/>
+                                    </org.opencrx.kernel.uom1.Uom>
+                                </uom>
+                            </_content>
+                        </org.opencrx.kernel.uom1.Segment>                    
+				    </segment>
+                </_content>
+            </org.openmdx.base.Provider>
+        </provider>
+    </_content>
+</org.openmdx.base.Authority>

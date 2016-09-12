@@ -1,0 +1,340 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-ajax/core-ajax.html">
+<link rel="import" href="../bower_components/core-collapse/core-collapse.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-fab/paper-fab.html">
+<link rel="import" href="../bower_components/core-icons/communication-icons.html">
+<polymer-element name="mycontact-detail" attributes="contact">
+	<template>
+		<link rel="stylesheet" href="mycontact-detail.css">
+	    <core-ajax 
+	    	id="ajaxGetAddresses"
+	    	url='{{contact["@href"]}}/address?query=forAllDisabled().isFalse();' 
+	    	withCredentials
+	    	handleAs='json'
+	    	method='GET'
+	    	response='{{addresses}}'> 
+	    </core-ajax>
+	    <core-ajax 
+	    	id="ajaxUpdateObject"
+	    	url='' 
+	    	withCredentials
+	    	contentType='application/json'
+	    	method='PUT'
+	    	body=''> 
+	    </core-ajax>
+    	<div class="mycontact-detail-heading" on-click="{{toggleDetail}}">
+    		<div flex><b>{{contact.fullName == "," ? "*" : contact.fullName}}</b></div>
+			<div flex>{{contact.vcard | telWorkVoice}}</div>
+			<div flex>{{contact.vcard | telHomeVoice}}</div>
+			<div flex>{{contact.vcard | telCellVoice}}</div>
+			<div flex>{{contact.vcard | emailPrefInternet}}</div>
+    	</div>
+		<core-collapse id="detail">
+			<div class="mycontact-detail-content">
+				<!-- header -->
+				<template if='{{addresses}}'>
+					<div class="mycontact-detail-group">
+						<div style="position:absolute;right:40px;">
+							<paper-fab mini icon="create" class="mycontact-detail-edit-icon" on-tap="{{edit}}"></paper-fab>
+							<paper-fab mini icon="save" class="mycontact-detail-save-icon" on-tap="{{save}}" style="display:none"></paper-fab>
+							<paper-fab mini icon="cancel" class="mycontact-detail-cancel-icon" on-tap="{{cancelEdit}}" style="display:none"></paper-fab>
+						</div>
+						<paper-input floatingLabel disabled label="Salutation:" style="width:90%" value="{{contact.salutation}}"></paper-input>
+						<paper-input floatingLabel disabled label="First name:" style="width:30%" value="{{contact.firstName}}"></paper-input>
+						<paper-input floatingLabel disabled label="Middle name:" style="width:30%" value="{{contact.middleName}}"></paper-input>
+						<paper-input floatingLabel disabled label="Last name:" style="width:30%" value="{{contact.lastName}}"></paper-input>
+						<paper-input floatingLabel disabled label="Alias name:" style="width:90%" value="{{contact.aliasName}}"></paper-input>
+						<!-- used as template only -->
+						<core-ajax url='{{contact["@href"]}}' body='{{contact}}'></core-ajax>						
+					</div>
+				</template>
+				<!-- phone -->
+				<template bind='{{addresses.objects | getMainPhoneNumbers as phoneNumbers}}'>
+					<template repeat='{{address in phoneNumbers}}'>
+						<template bind='{{address | getAddressType as addressType}}'>
+							<div class="mycontact-detail-group">
+								<div style="position:absolute;right:40px;">
+									<paper-fab mini icon="create" class="mycontact-detail-edit-icon" on-tap="{{edit}}"></paper-fab>
+									<paper-fab mini icon="save" class="mycontact-detail-save-icon" on-tap="{{save}}" style="display:none"></paper-fab>
+									<paper-fab mini icon="cancel" class="mycontact-detail-cancel-icon" on-tap="{{cancelEdit}}" style="display:none"></paper-fab>
+								</div>
+								<core-icon icon="communication:phone"></core-icon>
+								<span style="font-size:0.75em;color:rgb(117,117,117);">{{addressType}}</span>
+								<br />
+								<paper-input floatingLabel disabled label="Phone:" style="width:90%" value="{{address.phoneNumberFull}}"></paper-input>
+								<!-- used as template only -->
+								<core-ajax url='{{address["@href"]}}' body='{{address}}'></core-ajax>						
+							</div>
+						</template>
+					</template>
+				</template>
+				<!-- email -->
+				<template bind='{{addresses.objects | getMainEMailAddresses as emailAddresses}}'>
+					<template repeat='{{address in emailAddresses}}'>
+						<template bind='{{address | getAddressType as addressType}}'>
+							<div class="mycontact-detail-group">
+								<div style="position:absolute;right:40px;">					
+									<paper-fab mini icon="create" class="mycontact-detail-edit-icon" on-tap="{{edit}}"></paper-fab>
+									<paper-fab mini icon="save" class="mycontact-detail-save-icon" on-tap="{{save}}" style="display:none"></paper-fab>
+									<paper-fab mini icon="cancel" class="mycontact-detail-cancel-icon" on-tap="{{cancelEdit}}" style="display:none"></paper-fab>
+								</div>
+								<core-icon icon="mail"></core-icon>
+								<span style="font-size:0.75em;color:rgb(117,117,117);">{{addressType}}</span>
+								<br />
+								<paper-input floatingLabel disabled label="E-Mail:" style="width:90%" value="{{address.emailAddress}}"></paper-input>
+								<!-- used as template only -->
+								<core-ajax url='{{address["@href"]}}' body='{{address}}'></core-ajax>
+							</div>
+						</template>
+					</template>
+				</template>
+				<!-- postal -->
+				<template bind='{{addresses.objects | getMainPostalAddresses as postalAddresses}}'>
+					<template repeat='{{address in postalAddresses}}'>
+						<template bind='{{address | getAddressType as addressType}}'>
+							<div class="mycontact-detail-group">
+								<div style="position:absolute;right:40px;">						
+									<paper-fab mini icon="create" class="mycontact-detail-edit-icon" on-tap="{{edit}}"></paper-fab>
+									<paper-fab mini icon="save" class="mycontact-detail-save-icon" on-tap="{{save}}" style="display:none"></paper-fab>
+									<paper-fab mini icon="cancel" class="mycontact-detail-cancel-icon" on-tap="{{cancelEdit}}" style="display:none"></paper-fab>
+								</div>
+								<core-icon icon="room"></core-icon>
+								<span style="font-size:0.75em;color:rgb(117,117,117);">{{addressType}}</span>
+								<br />
+								<template bind='{{address.postalAddressLine["_item"] | asArray as postalAddressLines}}'>
+									<template repeat='{{postalAddressLine in postalAddressLines}}'>
+										<paper-input floatingLabel disabled label="Address line:" style="width:90%" value='{{postalAddressLine["$"]}}'></paper-input>
+										<br />
+									</template>
+								</template>
+								<template bind='{{address.postalStreet["_item"] | asArray as postalStreets}}'>
+									<template repeat='{{postalStreet in postalStreets}}'>
+										<paper-input floatingLabel disabled label="Street:" style="width:90%" value='{{postalStreet["$"]}}'></paper-input>
+										<br />
+									</template>
+								</template>
+								<paper-input floatingLabel disabled label="Postal code:" style="width:20%" value="{{address.postalCode}}"></paper-input>
+								<paper-input floatingLabel disabled label="City:" style="width:70%" value="{{address.postalCity}}"></paper-input>
+								<!-- used as template only -->
+								<core-ajax url='{{address["@href"]}}' body='{{address}}'></core-ajax>								
+							</div>
+						</template>
+					</template>
+				</template>
+			</div>
+		</core-collapse>
+  	</template>
+  	<script>
+  		Polymer({
+  			ready: function () {
+				this.$.ajaxGetAddresses.headers = '{"Accept": "application/json", "X-Requested-With": "XMLHttpRequest"}';
+				this.$.ajaxUpdateObject.headers = '{"Accept": "application/json", "X-Requested-With": "XMLHttpRequest"}';
+				this.oldFieldValues = [];
+  			},
+  			toggleDetail: function() {
+  				this.$.detail.toggle();
+  				if(this.$.detail.opened) {
+  					this.$.ajaxGetAddresses.go();
+  				}
+  			},
+  			telWorkVoice: function(vcard) {
+  				return this.extractAttribute("TEL;WORK;VOICE:", vcard);
+  			},
+  			telHomeVoice: function(vcard) {
+  				return this.extractAttribute("TEL;HOME;VOICE:", vcard);  				
+  			},
+  			telCellVoice: function(vcard) {
+  				return this.extractAttribute("TEL;CELL;VOICE:", vcard);  				
+  			},
+  			emailPrefInternet: function(vcard) {
+  				return this.extractAttribute("EMAIL;PREF;INTERNET:", vcard);  				
+  			},
+  			asArray: function(object) {
+  				if(object) {
+  					if(Array.isArray(object)) {
+  						return object;
+  					} else {
+  						return [object];
+  					}
+  				} else {
+  					return [];
+  				}
+  			},
+  			isHomeAddress: function(address) {
+  				if(address.usage) {
+					var usages = this.asArray(address.usage["_item"]);
+					for(var i = 0; i < usages.length; i++) {
+						var usage = usages[i];
+						if(usage["$"] == "400") {
+							return true;
+						}
+					}
+  				}
+  				return false;
+  			},
+  			isWorkAddress: function(address) {
+  				if(address.usage) {
+  					var usages = this.asArray(address.usage["_item"]);
+					for(var i = 0; i < usages.length; i++) {
+						var usage = usages[i];
+						if(usage["$"] == "500") {
+							return true;
+						}
+					}
+  				}
+  				return false;
+  			},
+  			isMobileAddress: function(address) {
+  				if(address.usage) {
+  					var usages = this.asArray(address.usage["_item"]);
+					for(var i = 0; i < usages.length; i++) {
+						var usage = usages[i];
+						if(usage["$"] == "200") {
+							return true;
+						}
+					}
+  				}
+  				return false;
+  			},
+  			getAddressType: function(address) {
+  				return this.isHomeAddress(address) 
+  					? "Home" 
+  					: this.isWorkAddress(address) 
+  						? "Work" 
+  						: this.isMobileAddress(address) 
+  							? "Cell" 
+  							: "Other";
+  			},
+  			getMainPhoneNumbers: function(addresses) {
+  				var phoneNumbers = [];
+  				if(addresses) {
+	  				for(var i = 0; i < addresses.length; i++) {
+	  					var address = addresses[i];
+						if(address["@type"] == "org.opencrx.kernel.account1.PhoneNumber" && address.isMain) {
+							phoneNumbers.push(address);
+						}
+	  				}
+  				}
+  				return phoneNumbers;
+  			},
+  			getMainEMailAddresses: function(addresses) {
+  				var emailAddresses = [];
+  				if(addresses) {
+	  				for(var i = 0; i < addresses.length; i++) {
+	  					var address = addresses[i];
+						if(address["@type"] == "org.opencrx.kernel.account1.EMailAddress" && address.isMain) {
+							emailAddresses.push(address);
+						}
+	  				}
+  				}
+  				return emailAddresses;
+  			},
+  			getMainPostalAddresses: function(addresses) {
+  				var postalAddresses = [];
+  				if(addresses) {
+	  				for(var i = 0; i < addresses.length; i++) {
+	  					var address = addresses[i];
+						if(address["@type"] == "org.opencrx.kernel.account1.PostalAddress" && address.isMain) {
+							postalAddresses.push(address);
+						}
+	  				}
+  				}
+  				return postalAddresses;
+  			},
+  			extractAttribute: function(attribute, vcard) {
+  				var start = vcard.indexOf(attribute);
+  				if(start >= 0) {
+					var end = vcard.indexOf("\n", start);
+					if(end > start) {
+						return vcard.substring(start + attribute.length, end);
+					} else {
+						return "";
+					}
+  				} else {
+  					return "";
+  				}  				
+  			},
+  			edit: function(event, detail, sender) {
+  				var fieldGroup = sender.parentNode.parentNode;
+  				var inputFields = fieldGroup.getElementsByTagName('paper-input');
+  				this.oldFieldValues[fieldGroup] = [];
+  				for(var i = 0; i < inputFields.length; i++) {
+  					var inputField = inputFields[i];
+  					this.oldFieldValues[fieldGroup].push(inputField.value);
+  					inputField.disabled = false;
+  				}
+  				// Set focus to first input field 
+  				// Workaround see http://stackoverflow.com/questions/5520155/settimeout-callback-argument
+  				if(inputFields.length > 0) {
+  					setTimeout(function(){
+  						inputFields[0].$.input.focus();;
+  					}, 100);
+ 				}
+  				this.updateEditStatus(sender, false);
+  			},
+  			cancelEdit: function(event, detail, sender) {
+  				var fieldGroup = sender.parentNode.parentNode;
+  				var inputFields = fieldGroup.getElementsByTagName('paper-input');
+  				for(var i = 0; i < inputFields.length; i++) {
+  					var inputField = inputFields[i];
+  					inputField.value = this.oldFieldValues[fieldGroup][i];
+  					inputField.disabled = true;
+  				}
+  				this.updateEditStatus(sender, true);
+  			},
+  			save: function(event, detail, sender) {
+  				var updateObjectHandlers = sender.parentNode.parentNode.getElementsByTagName('core-ajax');
+  				for(var i = 0; i < updateObjectHandlers.length; i++) {
+  					var updateObjectHandler = updateObjectHandlers[i];
+  					var object = updateObjectHandler.body;
+  					var body = {};
+  					if(object["@type"] == "org.opencrx.kernel.account1.Contact") {
+  						var value = {};
+  						value.salutation = object.salutation;
+  						value.firstName = object.firstName;
+  						value.middleName = object.middleName;
+  						value.lastName = object.lastName;
+  						value.aliasName = object.aliasName;
+  						body["org.opencrx.kernel.account1.Contact"] = value;
+  					} else if(object["@type"] == "org.opencrx.kernel.account1.PhoneNumber") {
+  						var value = {};
+  						value.phoneNumberFull = object.phoneNumberFull;
+  						body["org.opencrx.kernel.account1.PhoneNumber"] = value;
+  					} else if(object["@type"] == "org.opencrx.kernel.account1.EMailAddress") {
+  						var value = {};
+  						value.emailAddress = object.emailAddress;
+  						body["org.opencrx.kernel.account1.EMailAddress"] = value;
+  					} else if(object["@type"] == "org.opencrx.kernel.account1.PostalAddress") {
+  						var value = {};
+  						value.postalAddressLine = object.postalAddressLine;
+  						value.postalStreet = object.postalStreet;
+  						value.postalCode = object.postalCode;
+  						value.postalCity = object.postalCity;
+  						body["org.opencrx.kernel.account1.PostalAddress"] = value;
+  					}
+  					this.$.ajaxUpdateObject.url = updateObjectHandler.url;
+  					this.$.ajaxUpdateObject.body = JSON.stringify(body);
+  					this.$.ajaxUpdateObject.go();
+  				}
+  				var inputFields = sender.parentNode.parentNode.getElementsByTagName('paper-input');
+  				for(var i = 0; i < inputFields.length; i++) {
+  					var inputField = inputFields[i];
+  					inputField.disabled = true;
+  				}
+  				this.updateEditStatus(sender, true);
+  			},
+  			updateEditStatus: function(sender, isCancel) {
+  				var editButtons = sender.parentNode.parentNode.getElementsByTagName('paper-fab');
+  				for(var i = 0; i < editButtons.length; i++) {
+  					var editButton = editButtons[i];
+  					if(isCancel) {
+  						editButton.style.display = editButton.icon == "create" ? "inline-block" : "none";
+  					} else {
+  						editButton.style.display = editButton.icon == "create" ? "none" : "inline-block";  						
+  					}
+  				}			
+  			}
+  		});
+  	</script>
+</polymer-element>

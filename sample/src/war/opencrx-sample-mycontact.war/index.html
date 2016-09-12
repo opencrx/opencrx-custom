@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<title>MyContact</title>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+	<!--  styles -->
+	<link rel="stylesheet" type="text/css" href="mycontact.css">
+	<!-- components -->	
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+	<link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+	<link rel="import" href="bower_components/core-toolbar/core-toolbar.html">	
+	<link rel="import" href="bower_components/font-roboto/roboto.html">
+	<link rel="import" href="elements/mycontact-toolbar.html">
+	<link rel="import" href="elements/mycontact-list.html">
+</head>
+<body fullbleed vertical layout unresolved style="font-family:sans-serif;">
+	<core-header-panel flex>
+		<core-toolbar class="mycontact-main-toolbar">
+			<mycontact-toolbar id="myContactToolbar" appTitle="My Contacts" fit></mycontact-toolbar>
+			<script>
+				var myContactToolbar = document.getElementById('myContactToolbar');
+				myContactToolbar.addEventListener('do-search', function(e) {
+					var myContactList = document.getElementById("myContactList");
+					myContactList.query = 'thereExistsFullName().greaterThan("@");thereExistsVcard().like("(?i)BEGIN:VCARD.*' + e.detail.value + '.*");forAllDisabled().isFalse();orderByFullName().ascending();';
+			  	});
+			</script>
+		</core-toolbar>
+		<div class="content">
+	    	<mycontact-list
+	    		id="myContactList" 
+	    		url='../opencrx-rest-CRX/org.opencrx.kernel.account1/provider/CRX/segment/Standard/account?'
+	    		queryType='org:opencrx:kernel:account1:Contact' 
+	    		query='thereExistsFullName().greaterThan("@");forAllDisabled().isFalse();orderByFullName().ascending();' 
+	    		batchSize='20' 
+	    		limit='5000'>
+	    	</mycontact-list>
+	    </div>
+	</core-header-panel>
+</body>
+</html>

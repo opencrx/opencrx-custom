@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_q_4G8G7YEeOirc4aRrfFYg" name="org.opencrx.sample.client1">
+  <packagedElement xmi:type="uml:Package" xmi:id="_3V-g8G7YEeOirc4aRrfFYg" name="org">
+    <packagedElement xmi:type="uml:Package" xmi:id="_5SpB8G7YEeOirc4aRrfFYg" name="opencrx">
+      <packagedElement xmi:type="uml:Package" xmi:id="_73ouQG7YEeOirc4aRrfFYg" name="sample">
+        <packagedElement xmi:type="uml:Package" xmi:id="_9lZQkG7YEeOirc4aRrfFYg" name="client1">
+          <packagedElement xmi:type="uml:Class" xmi:id="_U2-gsG7ZEeOirc4aRrfFYg" name="Segment">
+            <generalization xmi:id="_ZkG20G7cEeOirc4aRrfFYg">
+              <general xmi:type="uml:Class" href="../openMDX 2 ~ Core (EMF)/org.openmdx.base.uml#_3C7B8A60016D3FC487C80099"/>
+            </generalization>
+            <ownedOperation xmi:id="_-eMSEG7eEeOirc4aRrfFYg" name="queryAccounts">
+              <ownedParameter xmi:id="_Nu-7kG7fEeOirc4aRrfFYg" name="in" type="_HTQgMG7dEeOirc4aRrfFYg" direction="inout" effect="read"/>
+              <ownedParameter xmi:id="_TOIr4G7fEeOirc4aRrfFYg" name="out" type="_KEsGAG7dEeOirc4aRrfFYg" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_9ZDg4G7cEeOirc4aRrfFYg" name="AccountT">
+            <eAnnotations xmi:id="_njqFcG7dEeOirc4aRrfFYg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_rAq-4G7dEeOirc4aRrfFYg" key="struct"/>
+            </eAnnotations>
+            <ownedAttribute xmi:id="_8h6oEG7dEeOirc4aRrfFYg" name="fullName" visibility="public">
+              <type xmi:type="uml:PrimitiveType" href="../openMDX 2 ~ Core (EMF)/org.w3c.uml#_3C7B8A60016D3C8B62E40010"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8-fPUG7dEeOirc4aRrfFYg" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8-gdcG7dEeOirc4aRrfFYg" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_8-hEgG7dEeOirc4aRrfFYg">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_9NEd4G7dEeOirc4aRrfFYg" name="postalCity" visibility="public">
+              <type xmi:type="uml:PrimitiveType" href="../openMDX 2 ~ Core (EMF)/org.w3c.uml#_3C7B8A60016D3C8B62E40010"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9dWVkG7dEeOirc4aRrfFYg"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9dW8oG7dEeOirc4aRrfFYg" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_9dXjsG7dEeOirc4aRrfFYg">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_HTQgMG7dEeOirc4aRrfFYg" name="QueryAccountParams">
+            <eAnnotations xmi:id="_tvsJ4G7dEeOirc4aRrfFYg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_tvsJ4W7dEeOirc4aRrfFYg" key="struct"/>
+            </eAnnotations>
+            <ownedAttribute xmi:id="_UabVUG7eEeOirc4aRrfFYg" name="name" visibility="public">
+              <type xmi:type="uml:PrimitiveType" href="../openMDX 2 ~ Core (EMF)/org.w3c.uml#_3C7B8A60016D3C8B62E40010"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UuEDAG7eEeOirc4aRrfFYg"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UuEqEG7eEeOirc4aRrfFYg" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_UuFRIG7eEeOirc4aRrfFYg">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_WBbIUG7eEeOirc4aRrfFYg" name="postalCity" visibility="public">
+              <type xmi:type="uml:PrimitiveType" href="../openMDX 2 ~ Core (EMF)/org.w3c.uml#_3C7B8A60016D3C8B62E40010"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WPQI8G7eEeOirc4aRrfFYg"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WPRXEG7eEeOirc4aRrfFYg" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_WPR-IG7eEeOirc4aRrfFYg">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_KEsGAG7dEeOirc4aRrfFYg" name="QueryAccountResult">
+            <eAnnotations xmi:id="_uOipEG7dEeOirc4aRrfFYg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_uOipEW7dEeOirc4aRrfFYg" key="struct"/>
+            </eAnnotations>
+            <ownedAttribute xmi:id="_fTFg8G7eEeOirc4aRrfFYg" name="accounts" visibility="public" type="_9ZDg4G7cEeOirc4aRrfFYg">
+              <eAnnotations xmi:id="_1C8foG7eEeOirc4aRrfFYg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+                <details xmi:id="_1C8foW7eEeOirc4aRrfFYg" key="list"/>
+              </eAnnotations>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fncAUG7eEeOirc4aRrfFYg"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fnlKQG7eEeOirc4aRrfFYg" value="*"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_fnmYYG7eEeOirc4aRrfFYg">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

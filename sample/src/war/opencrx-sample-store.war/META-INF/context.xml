@@ -1,0 +1,5 @@
+<Context 
+	path="/opencrx-sample-store" 
+	docBase="${catalina.home}/webapps/opencrx-sample-store.war"
+>
+</Context>

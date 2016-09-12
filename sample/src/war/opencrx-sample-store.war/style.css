@@ -1,0 +1,62 @@
+BODY { PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: small; BACKGROUND: #e0e0e0; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #333; PADDING-TOP: 0px; FONT-FAMILY: "Lucida Grande", "Trebuchet MS", Verdana, sans-serif; TEXT-ALIGN: center }
+BLOCKQUOTE { PADDING-RIGHT: 0px; PADDING-LEFT: 20px; FONT-SIZE: 88%; BACKGROUND: url(pics/quotes00.gif) no-repeat left top; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 30px; COLOR: #666; LINE-HEIGHT: 1.5em; PADDING-TOP: 10px }
+P.information { color: green; font-weight: bolder; }
+P.errorMessage { color: red; font-weight: bolder; }
+.admin-console { BACKGROUND: url(pics/quotes00.gif) no-repeat left top; width:400px; background-color:lightyellow; PADDING-LEFT: 20px; MARGIN-TOP: 10px; MARGIN-BOTTOM:30px; COLOR: #666; LINE-HEIGHT: 1.5em; PADDING-TOP: 10px; border: 1px solid gray  }
+BLOCKQUOTE P { MARGIN-TOP: 0px }
+abbr { CURSOR: help; BORDER-BOTTOM: 1px dotted; FONT-STYLE: normal }
+ACRONYM { CURSOR: help; BORDER-BOTTOM: 1px dotted; FONT-STYLE: normal }
+CODE { COLOR: #f63 }
+IMG { BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none }
+UL { PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 20px 30px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none }
+LI { PADDING-LEFT: 10px; BACKGROUND: url(pics/tictac_o.gif) no-repeat 0px 6px; MARGIN-BOTTOM: 3px; LIST-STYLE-TYPE: none }
+A:link { COLOR: #69c }
+A:visited { COLOR: #666699 }
+A:hover { COLOR: #693 }
+A:active { COLOR: #cc3333; TEXT-DECORATION: none }
+A.smallLink { font-size: small }
+#wrap { BACKGROUND: url(pics/tile0000.gif) repeat-y; MARGIN: 0px auto; WIDTH: 847px; TEXT-ALIGN: left }
+#content { MARGIN-LEFT: 62px; }
+#sidebar { PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 85%; BACKGROUND: url(pics/sidebar_.gif) no-repeat 0px 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 41px 0px 547px; COLOR: #666; LINE-HEIGHT: 1.4em; PADDING-TOP: 20px }
+#main-content { PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 20px 0px 0px; WIDTH: 460px; LINE-HEIGHT: 1.2em; PADDING-TOP: 0px; overflow:hidden; }
+
+#blog-header { PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(pics/top_div0.gif) #e0e0e0 no-repeat left top; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: "Lucida Grande", "Trebuchet MS" }
+#blog-header H1 { PADDING-RIGHT: 60px; PADDING-LEFT: 160px; FONT-SIZE: 200%; BACKGROUND: url(pics/top_h100.gif) no-repeat left bottom; PADDING-BOTTOM: 50px; MARGIN: 0px; COLOR: #fff; PADDING-TOP: 30px; text-shadow: #81A75B 2px 2px 2px }
+#blog-header H1 A { COLOR: #fff; TEXT-DECORATION: none }
+#blog-header H1 A:hover { COLOR: #eee }
+
+H2.date-header { MARGIN-TOP: 0px; PADDING-LEFT: 14px; FONT-SIZE: 90%; BACKGROUND: url(pics/date_ico.gif) no-repeat 0px 50%; COLOR: #f93 }
+H3.post-title { MARGIN-TOP: 1em; FONT-SIZE: 130%; COLOR: royalblue; FONT-FAMILY: "Lucida Grande", "Trebuchet MS" }
+.post { PADDING-RIGHT: 0px; PADDING-LEFT: 14px; PADDING-BOTTOM: 1.5em; MARGIN: 0px; PADDING-TOP: 0px; BORDER-BOTTOM: #ddd 1px solid }
+.post-footer { PADDING-RIGHT: 0px; PADDING-LEFT: 14px; FONT-SIZE: 88%; BACKGROUND: url(pics/tictac_g.gif) no-repeat 0px 8px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #999; PADDING-TOP: 0px }
+
+#comments { FONT-SIZE: 85%; BACKGROUND: url(pics/comments.gif) #eee no-repeat left top; COLOR: #666; LINE-HEIGHT: 1.5em; PADDING-TOP: 10px }
+#comments H4 { PADDING-RIGHT: 0px; PADDING-LEFT: 40px; FONT-SIZE: 130%; BACKGROUND: url(pics/bubbles0.gif) no-repeat 10px 0px; PADDING-BOTTOM: 0px; MARGIN: 20px 0px 15px; COLOR: #666; PADDING-TOP: 8px; FONT-FAMILY: "Lucida Grande", "Trebuchet MS"; HEIGHT: 37px }
+#comments UL { MARGIN-LEFT: 0px }
+#comments LI { PADDING-LEFT: 0px; BACKGROUND: none transparent scroll repeat 0% 0% }
+.comment-body { PADDING-RIGHT: 10px; PADDING-LEFT: 25px; BACKGROUND: url(pics/tictac_o.gif) no-repeat 10px 5px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px }
+.comment-body P { MARGIN-BOTTOM: 0px }
+.comment-data { PADDING-RIGHT: 10px; PADDING-LEFT: 60px; BACKGROUND: url(pics/comment_.gif) no-repeat 44px 2px; PADDING-BOTTOM: 1em; MARGIN: 4px 0px 0px; COLOR: #999; PADDING-TOP: 0px; BORDER-BOTTOM: #ddd 1px solid }
+.deleted-comment { COLOR: gray; FONT-STYLE: italic }
+
+H2.sidebar-title { PADDING-RIGHT: 0px; PADDING-LEFT: 50px; FONT-SIZE: 130%; BACKGROUND: url(pics/sidebar0.gif) no-repeat 20px 15px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #666; PADDING-TOP: 25px; FONT-FAMILY: "Lucida Grande", "Trebuchet MS"; HEIGHT: 30px }
+#sidebar UL { PADDING-RIGHT: 20px; PADDING-LEFT: 20px; PADDING-BOTTOM: 1em; MARGIN: 0px; PADDING-TOP: 5px; BORDER-BOTTOM: #ddd 1px solid }
+#sidebar P { PADDING-BOTTOM: 5px; MARGIN: 0px; PADDING-TOP: 5px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; }
+DIV.sidebar-block { PADDING-RIGHT: 20px; PADDING-LEFT: 20px; PADDING-BOTTOM: 20px; MARGIN-BOTTOM: 20px; PADDING-TOP: 5px; BORDER-BOTTOM: lightgrey 1px solid }
+#sidebar LI { BACKGROUND: url(pics/tictac_h.gif) no-repeat 0px 5px }
+
+.categoryLink { display:inline; width:150px; margin:5px 5px 5px 5px; padding-left: 15px; BACKGROUND: url(pics/tictac_h.gif) no-repeat 0px 7px }
+
+#sidebar P.profile-link { PADDING-LEFT: 36px; BACKGROUND: url(pics/profile0.gif) no-repeat 20px 4px }
+#sidebar P.horizontal-bar { PADDING-LEFT: 36px }
+P#powered-by { BORDER-RIGHT: medium none; BORDER-TOP: medium none; MARGIN-TOP: 1em; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none }
+.clear { CLEAR: both; HEIGHT: 0px }
+
+#footer { PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 85%; BACKGROUND: url(pics/bottom_s.gif) no-repeat left bottom; PADDING-BOTTOM: 9px; MARGIN: 0px; COLOR: #ddd; PADDING-TOP: 0px }
+#footer P { PADDING-RIGHT: 320px; PADDING-LEFT: 95px; BACKGROUND: url(pics/bottom_t.gif) no-repeat left top; PADDING-BOTTOM: 20px; MARGIN: 0px; PADDING-TOP: 20px }
+
+PRE { FONT-FAMILY: "Lucida Grande", "Trebuchet MS", Verdana, sans-serif; font-size:smaller; margin:2px 2px 2px 2px; padding-right:10px; width:300px; display:inline; }
+
+UNKNOWN { BORDER-RIGHT: medium none; PADDING-RIGHT: 0px; BORDER-TOP: medium none; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; BORDER-LEFT: medium none; PADDING-TOP: 0px; BORDER-BOTTOM: medium none }
+UNKNOWN { PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: white; PADDING-BOTTOM: 0px; MARGIN: 0px; FONT: 10pt "Trebuchet MS", Tahoma, Arial, sans-serif; COLOR: #353535; PADDING-TOP: 0px }
+

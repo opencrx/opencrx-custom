@@ -1,0 +1,67 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-ajax/core-ajax.html">
+<link rel="import" href="../bower_components/core-icons/notification-icons.html">
+<link rel="import" href="../bower_components/core-scroll-threshold/core-scroll-threshold.html">
+<polymer-element name="myobject-list" attributes="url queryType query batchSize limit">
+	<template>
+	    <core-ajax 
+	    	id="elAjax"
+	    	url='{{url}}&queryType={{queryType}}&query={{query}}&position={{position}}&size={{batchSize}}' 
+	    	withCredentials
+	    	handleAs='json' 
+	    	method='GET'
+	    	on-core-response='{{ajaxResponse}}' 
+	    	on-core-error='{{ajaxError}}'
+	    	on-core-complete='{{ajaxComplete}}'>
+	    </core-ajax>
+	 	<core-scroll-threshold
+	 		id='threshold' 
+	 		scrollTarget='{{$.scroller}}' 
+	 		lowerThreshold='1' 
+	 		on-lower-trigger='{{loadMore}}' 
+	 		flex>
+	 	</core-scroll-threshold>
+	 	<content></content>
+	</template>
+	<script>
+		Polymer({
+			ready: function() {
+				this.$.elAjax.headers = '{"Accept": "application/json", "X-Requested-With": "XMLHttpRequest"}';
+				this.loadFirst();
+			},
+			ajaxResponse: function(event, response) {
+				var objs = response.response.objects;
+				if(objs) {
+					for(var i = 0; i < objs.length; i++) {
+						this.objects.push(objs[i]);
+					}
+				}
+				if(!this.total) {
+					this.total = response.response["@total"];
+				}
+			},
+			ajaxError: function(event) {
+				// alert(JSON.stringify(event.detail));
+			},
+			ajaxComplete: function(event) {
+				// alert(JSON.stringify(event.detail));
+			},
+			loadMore: function() {
+				if(!this.total && this.position < parseInt(this.limit)) {
+					this.position = this.position + parseInt(this.batchSize);
+					this.$.elAjax.go();
+				}
+				this.$.threshold.clearLower();
+			},
+			loadFirst: function() {
+				this.position = 0;
+				this.objects = [];
+				this.total = null;
+				this.$.elAjax.go();
+			},
+			queryChanged: function(oldVal, newVal) {
+				this.loadFirst();
+			}
+		});
+	</script>
+</polymer-element>

@@ -1,0 +1,101 @@
+\documentclass[a4paper,english]{article}
+
+\usepackage[cm,myheadings]{fullpage}
+\usepackage{fancyhdr} % header/footer
+
+\setlength{\headheight}{16pt}
+\setlength{\marginparwidth}{0pt}
+\setlength{\footskip}{12mm}
+\setlength{\textheight}{250mm}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\setlength{\parindent}{0pt}
+
+\renewcommand{\headrule}{%
+\vspace{2pt}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}
+\lhead{\textbf{\Large{\reportVtitle}}}
+\chead{}
+\rhead{\textbf{\reportVActivityGroup}}
+\lfoot{\today}
+\cfoot{}
+\rfoot{\thepage\ / \pageref{LastPage}}
+
+\pagestyle{fancy}
+
+\usepackage{babel}
+\usepackage[num]{isodate}
+
+\usepackage[scaled]{helvet}
+\renewcommand*\familydefault{\sfdefault} 
+
+\usepackage[bookmarks=true]{hyperref} % pdf bookmarks
+\usepackage{lastpage} % page 99 of 99
+
+
+% input/output encoding
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+% titles
+\setcounter{secnumdepth}{1}
+\usepackage{titlesec} 
+\titlespacing{\section}{0pt}{*3}{*0}
+\titleformat{\section}
+  {\leaders\vrule width \textwidth\vskip 0.2pt\vspace{.8ex}%
+   \normalfont\Large\bfseries}
+  {}
+  {0em}
+  {\medskip}
+
+\usepackage{spverbatim}
+\usepackage{calc}
+
+
+\newcommand{\reportVtitle}{Activities}
+
+% tables
+\usepackage{multirow}
+\usepackage{tabu}
+\usepackage{longtable}
+\setlength{\LTpost}{2pt}
+\setlength{\LTpre}{2pt}
+
+\usepackage{multicol}
+
+\usepackage{needspace}
+
+
+% Textbausteine
+
+\newenvironment{crxSection}%
+{\Needspace{5\baselineskip}\section{\crxSectionVtitle}}%
+{}
+
+\newenvironment{crxActivityDetails}%
+{\begin{multicols}{2}\raggedcolumns}%
+{\end{multicols}}
+
+\newenvironment{crxTabTwo}%
+{\begin{tabu}[t]{@{} p{20mm} X}}%
+{\end{tabu}}
+\newcommand{\crxTabRowTwo}[2]{{#1}&{#2}\\}
+
+\newenvironment{crxDescription}%
+{}%
+{\par\medskip}
+
+\newenvironment{crxFollowUp}{%
+\begin{minipage}[t]{80mm}\begin{tabu}[t]{@{} p{28mm} p{40mm}}%
+\multicolumn{2}{@{} l}{\textbf{\crxFollowUpVtransition}}\\%
+\crxFollowUpVdate&\crxFollowUpVassignedTo\\%
+\end{tabu}\end{minipage}%
+\begin{minipage}[t]{\textwidth-80mm}%
+\textbf{\crxFollowUpVtitle}\\%
+}
+{
+\end{minipage}\par\medskip
+}
+
+

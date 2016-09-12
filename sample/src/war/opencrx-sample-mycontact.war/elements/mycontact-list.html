@@ -1,0 +1,21 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-ajax/core-ajax.html">
+<link rel="import" href="../bower_components/core-icons/notification-icons.html">
+<link rel="import" href="../bower_components/core-scroll-threshold/core-scroll-threshold.html">
+<link rel="import" href="myobject-list.html">
+<link rel="import" href="mycontact-detail.html">
+<polymer-element name="mycontact-list" extends="myobject-list" noscript>
+	<template>
+		<link rel="stylesheet" href="mycontact-list.css">
+	  	<div id="scroller" class="mycontact-list-scroller" fit>
+		    <template repeat="{{contact in objects}}">
+		    	<div class="mycontact-list-item">
+	    			<mycontact-detail contact="{{contact}}"></mycontact-detail>
+	    		</div>
+		    </template>
+		    <div hidden?="{{total || position >= +limit || !$.threshold.lowerTriggered}}">
+		    	<core-icon icon="notification:sync"></core-icon>
+		    </div>
+	  	</div>
+	</template>
+</polymer-element>

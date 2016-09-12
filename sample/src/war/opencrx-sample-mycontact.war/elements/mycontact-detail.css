@@ -1,0 +1,30 @@
+.mycontact-detail-heading {
+    background-color: #c0c0c0;
+    border: 1px solid #dedede;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+.mycontact-detail-content {
+    border: 1px solid #dedede;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	padding: 15px;	
+}
+.mycontact-detail-group {
+    background-color: #f3f3f3;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 10px;
+}
+.mycontact-detail-edit-icon {
+	background-color:black;
+}
+.mycontact-detail-cancel-icon {
+	background-color:black;
+}
+.mycontact-detail-save-icon {
+	background-color:black;
+}

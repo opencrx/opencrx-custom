@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.openmdx.base.Authority name="org:opencrx:kernel:product1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xri://+resource/org/opencrx/kernel/product1/xmi1/product1.xsd">
+    <_object/>
+    <_content>
+        <provider>
+            <org.openmdx.base.Provider qualifiedName="CRX" _operation="null">
+                <_object/>
+                <_content>
+                    <segment>
+                        <org.opencrx.kernel.product1.Segment qualifiedName="Standard" _operation="null">
+                            <_object/>
+                            <_content>
+                                <priceLevel>
+                                    <org.opencrx.kernel.product1.PriceLevel id="tL3Nca3nEduUrK-Q7UkzAQ">
+                                        <_object>
+                                            <priceUsage>
+                                                <_item>100</_item>
+                                            </priceUsage><!-- @see CodeValueContainer name="usageproductbaseprice" -->
+                                            <name>opencrx-store:Prices [$]</name>
+                                            <description>opencrx-store:Prices [$]</description>
+                                            <priceCurrency>840</priceCurrency><!-- @see CodeValueContainer name="currency" -->
+                                        </_object>
+                                        <_content>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.PriceLevel>
+                                </priceLevel>
+                                <productClassification>
+                                    <org.opencrx.kernel.product1.ProductClassification id="G5u9AKQoEduQrZNO4HYPGg">
+                                        <_object>
+                                            <disabled>false</disabled>
+                                            <name>opencrx-store:Products</name>
+                                            <description>Products</description>
+                                        </_object>
+                                        <_content>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.ProductClassification>
+                                    <org.opencrx.kernel.product1.ProductClassification id="9GQICDU85NF8JL1Y3LDFA17MN">
+                                        <_object>
+                                            <name>opencrx-store:Pets</name>
+                                            <description>Pets</description>
+                                        </_object>
+                                        <_content>
+                                            <relationship>
+                                                <org.opencrx.kernel.product1.ProductClassificationRelationship id="vSRyQ63lEduUrK-Q7UkzAQ">
+                                                    <_object>
+                                                        <relationshipType>0</relationshipType><!-- @see CodeValueContainer name="relatedProductType" -->
+                                                        <disabled>false</disabled>
+                                                        <name>opencrx-store:Products</name>
+                                                        <relationshipTo>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/G5u9AKQoEduQrZNO4HYPGg</relationshipTo>
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductClassificationRelationship>
+                                            </relationship>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.ProductClassification>
+                                    <org.opencrx.kernel.product1.ProductClassification id="91jjdKQuEdu9UisH6XB9wQ">
+                                        <_object>
+                                            <name>opencrx-store:Cats</name>
+                                            <description>Cats</description>
+                                        </_object>
+                                        <_content>
+                                            <relationship>
+                                                <org.opencrx.kernel.product1.ProductClassificationRelationship id="tL3NcK3nEduUrK-Q7UkzAQ">
+                                                    <_object>
+                                                        <relationshipType>0</relationshipType><!-- @see CodeValueContainer name="relatedProductType" -->
+                                                        <name>opencrx-store:Pets</name>
+                                                        <relationshipTo>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/9GQICDU85NF8JL1Y3LDFA17MN</relationshipTo>
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductClassificationRelationship>
+                                            </relationship>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.ProductClassification>
+                                    <org.opencrx.kernel.product1.ProductClassification id="iETz7a3rEduRlB3t5M7kmA">
+                                        <_object>
+                                            <name>opencrx-store:Spirits</name>
+                                            <description>Spirits</description>
+                                        </_object>
+                                        <_content>
+                                            <relationship>
+                                                <org.opencrx.kernel.product1.ProductClassificationRelationship id="iETz7a3rEduRlB3t5M7kmA">
+                                                    <_object>
+                                                        <relationshipType>0</relationshipType><!-- @see CodeValueContainer name="relatedProductType" -->
+                                                        <name>opencrx-store:Products</name>
+                                                        <relationshipTo>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/G5u9AKQoEduQrZNO4HYPGg</relationshipTo>
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductClassificationRelationship>
+                                            </relationship>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.ProductClassification>
+                                    <org.opencrx.kernel.product1.ProductClassification id="9HABRMJLAC4WZL1Y3LDFA17MN">
+                                        <_object>
+                                            <name>opencrx-store:Whiskeys</name>
+                                            <description>Whiskeys</description>
+                                        </_object>
+                                        <_content>
+                                            <relationship>
+                                                <org.opencrx.kernel.product1.ProductClassificationRelationship id="9HABRMJLAC4WZL1Y3LDFA17MN">
+                                                    <_object>
+                                                        <relationshipType>0</relationshipType><!-- @see CodeValueContainer name="relatedProductType" -->
+                                                        <name>opencrx-store:Spirits</name>
+                                                        <relationshipTo>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/iETz7a3rEduRlB3t5M7kmA</relationshipTo>
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductClassificationRelationship>
+                                            </relationship>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.ProductClassification>
+                                    <org.opencrx.kernel.product1.ProductClassification id="9GQID269VNS9VL1Y3LDFA17MN">
+                                        <_object>
+                                            <name>opencrx-store:Cars</name>
+                                            <description>Cars</description>
+                                        </_object>
+                                        <_content>
+                                            <relationship>
+                                                <org.opencrx.kernel.product1.ProductClassificationRelationship id="9GQID269VNS9VL1Y3LDFA17MN">
+                                                    <_object>
+                                                        <relationshipType>0</relationshipType><!-- @see CodeValueContainer name="relatedProductType" -->
+                                                        <name>opencrx-store:Products</name>
+                                                        <relationshipTo>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/G5u9AKQoEduQrZNO4HYPGg</relationshipTo>
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductClassificationRelationship>
+                                            </relationship>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.ProductClassification>                                                                       
+                                </productClassification>
+                                <product>
+                                    <org.opencrx.kernel.product1.Product id="iET4Ta3rEduRlB3t5M7kmA">
+                                        <_object>
+                                            <classification>
+                                                <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/9GQID269VNS9VL1Y3LDFA17MN</_item>
+                                            </classification>
+                                            <name>Ford Mustang</name>
+                                            <productNumber>Ford Mustang</productNumber>
+                                            <productState>1</productState>
+                                            <detailedDescription></detailedDescription>
+                                            <defaultUom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</defaultUom>
+                                            <description>mustang.png</description>
+                                            <itemNumber>0</itemNumber>
+                                            <minMaxQuantityHandling>0</minMaxQuantityHandling>
+                                        </_object>
+                                        <_content>
+                                            <basePrice>
+                                                <org.opencrx.kernel.product1.ProductBasePrice id="k0OQcK3rEduRlB3t5M7kmA">
+                                                    <_object>
+                                                        <price>20000.000000000</price>
+                                                        <uom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</uom>
+                                                        <priceLevel>
+                                                            <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/priceLevel/tL3Nca3nEduUrK-Q7UkzAQ</_item>
+                                                        </priceLevel>
+                                                        <usage>
+                                                            <_item>100</_item>
+                                                        </usage><!-- @see CodeValueContainer name="usageproductbaseprice" -->
+                                                        <priceCurrency>840</priceCurrency><!-- @see CodeValueContainer name="currency" -->
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductBasePrice>
+                                            </basePrice>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.Product>
+                                    <org.opencrx.kernel.product1.Product id="iET4163rEduRlB3t5M7kmA">
+                                        <_object>
+                                            <classification>
+                                                <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/9GQID269VNS9VL1Y3LDFA17MN</_item>
+                                            </classification>
+                                            <name>Mercedes SLK</name>
+                                            <productNumber>Mercedes SLK</productNumber>
+                                            <productState>1</productState>
+                                            <detailedDescription></detailedDescription>
+                                            <defaultUom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</defaultUom>
+                                            <description>mercedes-slk.png</description>
+                                            <itemNumber>0</itemNumber>    
+                                            <minMaxQuantityHandling>0</minMaxQuantityHandling>                                                                                                                                                                            
+                                        </_object>
+                                        <_content>
+                                            <basePrice>
+                                                <org.opencrx.kernel.product1.ProductBasePrice id="k0OQdK3rEduRlB3t5M7kmA">
+                                                    <_object>
+                                                        <price>50000.000000000</price>
+                                                        <uom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</uom>
+                                                        <priceLevel>
+                                                            <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/priceLevel/tL3Nca3nEduUrK-Q7UkzAQ</_item>
+                                                        </priceLevel>
+                                                        <usage>
+                                                            <_item>100</_item>
+                                                        </usage><!-- @see CodeValueContainer name="usageproductbaseprice" -->
+                                                        <priceCurrency>840</priceCurrency><!-- @see CodeValueContainer name="currency" -->
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductBasePrice>
+                                            </basePrice>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.Product>
+                                    <org.opencrx.kernel.product1.Product id="iET4p63rEduRlB3t5M7kmA">
+                                        <_object>
+                                            <classification>
+                                                <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/9GQID269VNS9VL1Y3LDFA17MN</_item>
+                                            </classification>
+                                            <name>Audi R8</name>
+                                            <productNumber>Audi R8</productNumber>
+                                            <productState>1</productState>
+                                            <detailedDescription>Audi R8</detailedDescription>
+                                            <defaultUom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</defaultUom>
+                                            <description>audi-r8.png</description>
+                                            <itemNumber>0</itemNumber>
+                                            <minMaxQuantityHandling>0</minMaxQuantityHandling>                                                                                                                                                                                                                                                                    
+                                        </_object>
+                                        <_content>
+                                            <basePrice>
+                                                <org.opencrx.kernel.product1.ProductBasePrice id="k0OQc63rEduRlB3t5M7kmA">
+                                                    <_object>
+                                                        <price>100000.000000000</price>
+                                                        <uom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</uom>
+                                                        <priceLevel>
+                                                            <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/priceLevel/tL3Nca3nEduUrK-Q7UkzAQ</_item>
+                                                        </priceLevel>
+                                                        <usage>
+                                                            <_item>100</_item>
+                                                        </usage><!-- @see CodeValueContainer name="usageproductbaseprice" -->
+                                                        <priceCurrency>840</priceCurrency><!-- @see CodeValueContainer name="currency" -->
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductBasePrice>
+                                            </basePrice>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.Product>
+                                    <org.opencrx.kernel.product1.Product id="X+VQ-K3IEduUrK-Q7UkzAQ">
+                                        <_object>
+                                            <classification>
+                                                <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/91jjdKQuEdu9UisH6XB9wQ</_item>
+                                            </classification>
+                                            <name>Cat 1</name>
+                                            <productNumber>Cat 1</productNumber>
+                                            <productState>1</productState>
+                                            <detailedDescription>Cat 1 Description</detailedDescription>
+                                            <defaultUom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</defaultUom>
+                                            <description>cat1.gif</description>
+                                            <itemNumber>0</itemNumber>
+                                            <minMaxQuantityHandling>0</minMaxQuantityHandling>                                                                                                                                                                                                                                                                    
+                                        </_object>
+                                        <_content>
+                                            <basePrice>
+                                                <org.opencrx.kernel.product1.ProductBasePrice id="tL3Ncq3nEduUrK-Q7UkzAQ">
+                                                    <_object>
+                                                        <price>100.000000000</price>
+                                                        <uom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</uom>
+                                                        <priceLevel>
+                                                            <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/priceLevel/tL3Nca3nEduUrK-Q7UkzAQ</_item>
+                                                        </priceLevel>
+                                                        <usage>
+                                                            <_item>100</_item>
+                                                        </usage><!-- @see CodeValueContainer name="usageproductbaseprice" -->
+                                                        <priceCurrency>840</priceCurrency><!-- @see CodeValueContainer name="currency" -->
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductBasePrice>
+                                            </basePrice>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.Product>
+                                    <org.opencrx.kernel.product1.Product id="X+VRMq3IEduUrK-Q7UkzAQ">
+                                        <_object>
+                                            <classification>
+                                                <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/91jjdKQuEdu9UisH6XB9wQ</_item>
+                                            </classification>
+                                            <name>Cat 2</name>
+                                            <productNumber>Cat 2</productNumber>
+                                            <productState>1</productState>
+                                            <detailedDescription>Cat 2 description</detailedDescription>
+                                            <defaultUom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</defaultUom>
+                                            <description>cat2.gif</description>
+                                            <itemNumber>0</itemNumber>
+                                            <minMaxQuantityHandling>0</minMaxQuantityHandling>                                                                                                                                                                                                                                                                    
+                                        </_object>
+                                        <_content>
+                                            <basePrice>
+                                                <org.opencrx.kernel.product1.ProductBasePrice id="vSRyRK3lEduUrK-Q7UkzAQ">
+                                                    <_object>
+                                                        <price>200.000000000</price>
+                                                        <uom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</uom>
+                                                        <priceLevel>
+                                                            <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/priceLevel/tL3Nca3nEduUrK-Q7UkzAQ</_item>
+                                                        </priceLevel>
+                                                        <usage>
+                                                            <_item>100</_item>
+                                                        </usage><!-- @see CodeValueContainer name="usageproductbaseprice" -->
+                                                        <priceCurrency>840</priceCurrency><!-- @see CodeValueContainer name="currency" -->
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductBasePrice>
+                                            </basePrice>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.Product>
+                                    <org.opencrx.kernel.product1.Product id="X+VRPq3IEduUrK-Q7UkzAQ">
+                                        <_object>
+                                            <classification>
+                                                <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/91jjdKQuEdu9UisH6XB9wQ</_item>
+                                            </classification>
+                                            <name>Cat 3</name>
+                                            <productNumber>Cat 3</productNumber>
+                                            <productState>1</productState>
+                                            <detailedDescription>Cat 3 description</detailedDescription>
+                                            <defaultUom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</defaultUom>
+                                            <description>cat3.gif</description>
+                                            <itemNumber>0</itemNumber>
+                                            <minMaxQuantityHandling>0</minMaxQuantityHandling>                                                                                                                                                                                                                                                                    
+                                        </_object>
+                                        <_content>
+                                            <basePrice>
+                                                <org.opencrx.kernel.product1.ProductBasePrice id="vSRyRa3lEduUrK-Q7UkzAQ">
+                                                    <_object>
+                                                        <price>300.000000000</price>
+                                                        <uom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</uom>
+                                                        <priceLevel>
+                                                            <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/priceLevel/tL3Nca3nEduUrK-Q7UkzAQ</_item>
+                                                        </priceLevel>
+                                                        <usage>
+                                                            <_item>100</_item>
+                                                        </usage><!-- @see CodeValueContainer name="usageproductbaseprice" -->
+                                                        <priceCurrency>840</priceCurrency><!-- @see CodeValueContainer name="currency" -->
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductBasePrice>
+                                            </basePrice>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.Product>
+                                    <org.opencrx.kernel.product1.Product id="X+VRTK3IEduUrK-Q7UkzAQ">
+                                        <_object>
+                                            <classification>
+                                                <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/91jjdKQuEdu9UisH6XB9wQ</_item>
+                                            </classification>
+                                            <name>Cat 4</name>
+                                            <productNumber>Cat 4</productNumber>
+                                            <productState>1</productState>
+                                            <detailedDescription>Cat 4 description</detailedDescription>
+                                            <defaultUom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</defaultUom>
+                                            <description>cat4.gif</description>
+                                            <itemNumber>0</itemNumber>                                            
+                                            <minMaxQuantityHandling>0</minMaxQuantityHandling>                                                                                                                                                                            
+                                        </_object>
+                                        <_content>
+                                            <basePrice>
+                                                <org.opencrx.kernel.product1.ProductBasePrice id="vSRyRq3lEduUrK-Q7UkzAQ">
+                                                    <_object>
+                                                        <price>400.000000000</price>
+                                                        <uom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</uom>
+                                                        <priceLevel>
+                                                            <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/priceLevel/tL3Nca3nEduUrK-Q7UkzAQ</_item>
+                                                        </priceLevel>
+                                                        <usage>
+                                                            <_item>100</_item>
+                                                        </usage><!-- @see CodeValueContainer name="usageproductbaseprice" -->
+                                                        <priceCurrency>840</priceCurrency><!-- @see CodeValueContainer name="currency" -->
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductBasePrice>
+                                            </basePrice>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.Product>
+                                    <org.opencrx.kernel.product1.Product id="X+VRXK3IEduUrK-Q7UkzAQ">
+                                        <_object>
+                                            <classification>
+                                                <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/91jjdKQuEdu9UisH6XB9wQ</_item>
+                                            </classification>
+                                            <name>Cat 5</name>
+                                            <productNumber>Cat 5</productNumber>
+                                            <productState>1</productState>
+                                            <detailedDescription>Cat 5 description</detailedDescription>
+                                            <defaultUom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</defaultUom>
+                                            <description>cat5.gif</description>
+                                            <itemNumber>0</itemNumber>                                            
+                                            <minMaxQuantityHandling>0</minMaxQuantityHandling>                                                                                                                                                                            
+                                        </_object>
+                                        <_content>
+                                            <basePrice>
+                                                <org.opencrx.kernel.product1.ProductBasePrice id="vSRyR63lEduUrK-Q7UkzAQ">
+                                                    <_object>
+                                                        <price>500.000000000</price>
+                                                        <uom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</uom>
+                                                        <priceLevel>
+                                                            <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/priceLevel/tL3Nca3nEduUrK-Q7UkzAQ</_item>
+                                                        </priceLevel>
+                                                        <usage>
+                                                            <_item>100</_item>
+                                                        </usage><!-- @see CodeValueContainer name="usageproductbaseprice" -->
+                                                        <priceCurrency>978</priceCurrency><!-- @see CodeValueContainer name="currency" -->
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductBasePrice>
+                                            </basePrice>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.Product>
+                                    <org.opencrx.kernel.product1.Product id="X+VRbq3IEduUrK-Q7UkzAQ">
+                                        <_object>
+                                            <classification>
+                                                <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/91jjdKQuEdu9UisH6XB9wQ</_item>
+                                            </classification>
+                                            <name>Cat 6</name>
+                                            <productNumber>Cat 6</productNumber>
+                                            <productState>1</productState>
+                                            <detailedDescription>Cat 6 description</detailedDescription>
+                                            <defaultUom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</defaultUom>
+                                            <description>cat6.gif</description>
+                                            <itemNumber>0</itemNumber>                                            
+                                            <minMaxQuantityHandling>0</minMaxQuantityHandling>                                                                                                                                                                            
+                                        </_object>
+                                        <_content>
+                                            <basePrice>
+                                                <org.opencrx.kernel.product1.ProductBasePrice id="vSRySK3lEduUrK-Q7UkzAQ">
+                                                    <_object>
+                                                        <price>600.000000000</price>
+                                                        <uom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</uom>
+                                                        <priceLevel>
+                                                            <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/priceLevel/tL3Nca3nEduUrK-Q7UkzAQ</_item>
+                                                        </priceLevel>
+                                                        <usage>
+                                                            <_item>100</_item>
+                                                        </usage><!-- @see CodeValueContainer name="usageproductbaseprice" -->
+                                                        <priceCurrency>840</priceCurrency><!-- @see CodeValueContainer name="currency" -->
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductBasePrice>
+                                            </basePrice>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.Product>
+                                    <org.opencrx.kernel.product1.Product id="X+VRgq3IEduUrK-Q7UkzAQ">
+                                        <_object>
+                                            <classification>
+                                                <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/91jjdKQuEdu9UisH6XB9wQ</_item>
+                                            </classification>
+                                            <name>Cat 7</name>
+                                            <productNumber>Cat 7</productNumber>
+                                            <productState>1</productState>
+                                            <detailedDescription>Cat 7 description</detailedDescription>
+                                            <defaultUom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</defaultUom>
+                                            <description>cat7.gif</description>
+                                            <itemNumber>0</itemNumber>                                            
+                                            <minMaxQuantityHandling>0</minMaxQuantityHandling>                                                                                                                                                                            
+                                        </_object>
+                                        <_content>
+                                            <basePrice>
+                                                <org.opencrx.kernel.product1.ProductBasePrice id="vSRySa3lEduUrK-Q7UkzAQ">
+                                                    <_object>
+                                                        <price>700.000000000</price>
+                                                        <uom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</uom>
+                                                        <priceLevel>
+                                                            <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/priceLevel/tL3Nca3nEduUrK-Q7UkzAQ</_item>
+                                                        </priceLevel>
+                                                        <usage>
+                                                            <_item>100</_item>
+                                                        </usage><!-- @see CodeValueContainer name="usageproductbaseprice" -->
+                                                        <priceCurrency>840</priceCurrency><!-- @see CodeValueContainer name="currency" -->
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductBasePrice>
+                                            </basePrice>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.Product>
+                                    <org.opencrx.kernel.product1.Product id="X+VRmK3IEduUrK-Q7UkzAQ">
+                                        <_object>
+                                            <classification>
+                                                <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/91jjdKQuEdu9UisH6XB9wQ</_item>
+                                            </classification>
+                                            <name>Cat 8</name>
+                                            <productNumber>Cat 8</productNumber>
+                                            <productState>1</productState>
+                                            <detailedDescription>Cat 8 description</detailedDescription>
+                                            <defaultUom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</defaultUom>
+                                            <description>cat8.gif</description>
+                                            <itemNumber>0</itemNumber>                                            
+                                            <minMaxQuantityHandling>0</minMaxQuantityHandling>                                                                                                                                                                            
+                                        </_object>
+                                        <_content>
+                                            <basePrice>
+                                                <org.opencrx.kernel.product1.ProductBasePrice id="vSRySq3lEduUrK-Q7UkzAQ">
+                                                    <_object>
+                                                        <price>800.000000000</price>
+                                                        <uom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</uom>
+                                                        <priceLevel>
+                                                            <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/priceLevel/tL3Nca3nEduUrK-Q7UkzAQ</_item>
+                                                        </priceLevel>
+                                                        <usage>
+                                                            <_item>100</_item>
+                                                        </usage><!-- @see CodeValueContainer name="usageproductbaseprice" -->
+                                                        <priceCurrency>840</priceCurrency><!-- @see CodeValueContainer name="currency" -->
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductBasePrice>
+                                            </basePrice>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.Product>
+                                    <org.opencrx.kernel.product1.Product id="X+VRsK3IEduUrK-Q7UkzAQ">
+                                        <_object>
+                                            <classification>
+                                                <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/91jjdKQuEdu9UisH6XB9wQ</_item>
+                                            </classification>
+                                            <name>Cat 9</name>
+                                            <productNumber>Cat 9</productNumber>
+                                            <productState>1</productState>
+                                            <detailedDescription>Cat 9 description</detailedDescription>
+                                            <defaultUom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</defaultUom>
+                                            <description>cat9.gif</description>
+                                            <itemNumber>0</itemNumber>                                            
+                                            <minMaxQuantityHandling>0</minMaxQuantityHandling>                                                                                                                                                                            
+                                        </_object>
+                                        <_content>
+                                            <basePrice>
+                                                <org.opencrx.kernel.product1.ProductBasePrice id="vSRyS63lEduUrK-Q7UkzAQ">
+                                                    <_object>
+                                                        <price>900.000000000</price>
+                                                        <uom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</uom>
+                                                        <priceLevel>
+                                                            <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/priceLevel/tL3Nca3nEduUrK-Q7UkzAQ</_item>
+                                                        </priceLevel>
+                                                        <usage>
+                                                            <_item>100</_item>
+                                                        </usage><!-- @see CodeValueContainer name="usageproductbaseprice" -->
+                                                        <priceCurrency>840</priceCurrency><!-- @see CodeValueContainer name="currency" -->
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductBasePrice>
+                                            </basePrice>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.Product>
+                                    <org.opencrx.kernel.product1.Product id="X+VRyq3IEduUrK-Q7UkzAQ">
+                                        <_object>
+                                            <classification>
+                                                <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/91jjdKQuEdu9UisH6XB9wQ</_item>
+                                            </classification>
+                                            <name>Cat 10</name>
+                                            <productNumber>Cat 10</productNumber>
+                                            <productState>1</productState>
+                                            <detailedDescription>Cat 10 description</detailedDescription>
+                                            <defaultUom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</defaultUom>
+                                            <description>cat10.gif</description>
+                                            <itemNumber>0</itemNumber>                                            
+                                            <minMaxQuantityHandling>0</minMaxQuantityHandling>                                                                                                                                                                            
+                                        </_object>
+                                        <_content>
+                                            <basePrice>
+                                                <org.opencrx.kernel.product1.ProductBasePrice id="vSRyTK3lEduUrK-Q7UkzAQ">
+                                                    <_object>
+                                                        <price>1000.000000000</price>
+                                                        <uom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</uom>
+                                                        <priceLevel>
+                                                            <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/priceLevel/tL3Nca3nEduUrK-Q7UkzAQ</_item>
+                                                        </priceLevel>
+                                                        <usage>
+                                                            <_item>100</_item>
+                                                        </usage><!-- @see CodeValueContainer name="usageproductbaseprice" -->
+                                                        <priceCurrency>840</priceCurrency><!-- @see CodeValueContainer name="currency" -->
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductBasePrice>
+                                            </basePrice>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.Product>
+                                    <org.opencrx.kernel.product1.Product id="iET0863rEduRlB3t5M7kmA">
+                                        <_object>
+                                            <classification>
+                                                <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/9HABRMJLAC4WZL1Y3LDFA17MN</_item>
+                                            </classification>
+                                            <name>Speyside&apos;s finest 1965 - 40 Year Old</name>
+                                            <productNumber>Speyside&apos;s finest 1965 - 40 Year Old</productNumber>
+                                            <productState>1</productState>
+                                            <detailedDescription>Speyside&apos;s finest 1965 - 40 Year Old. Single Cask Single Malt.</detailedDescription>
+                                            <defaultUom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</defaultUom>
+                                            <description>malt-Ballindalloch-box-393_000.jpg</description>
+                                            <itemNumber>0</itemNumber>                                            
+                                            <minMaxQuantityHandling>0</minMaxQuantityHandling>                                                                                                                                                                            
+                                        </_object>
+                                        <_content>
+                                            <basePrice>
+                                                <org.opencrx.kernel.product1.ProductBasePrice id="k0OQW63rEduRlB3t5M7kmA">
+                                                    <_object>
+                                                        <price>99.989997863</price>
+                                                        <uom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</uom>
+                                                        <priceLevel>
+                                                            <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/priceLevel/tL3Nca3nEduUrK-Q7UkzAQ</_item>
+                                                        </priceLevel>
+                                                        <usage>
+                                                            <_item>100</_item>
+                                                        </usage><!-- @see CodeValueContainer name="usageproductbaseprice" -->
+                                                        <priceCurrency>840</priceCurrency><!-- @see CodeValueContainer name="currency" -->
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductBasePrice>
+                                            </basePrice>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.Product>
+                                    <org.opencrx.kernel.product1.Product id="iET0C63rEduRlB3t5M7kmA">
+                                        <_object>
+                                            <classification>
+                                                <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/iETz7a3rEduRlB3t5M7kmA</_item>
+                                            </classification>
+                                            <name>Hennessy Exclusive Collection</name>
+                                            <productNumber>Hennessy Exclusive Collection</productNumber>
+                                            <productState>1</productState>
+                                            <detailedDescription>1 x Hennessy xo
+1 x Hennessy Paradis Extra
+2 x 20cl / 40% Vol</detailedDescription>
+                                            <defaultUom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</defaultUom>
+                                            <description>cognac-boxs-1823.jpg</description>
+                                            <itemNumber>0</itemNumber>                                            
+                                            <minMaxQuantityHandling>0</minMaxQuantityHandling>                                                                                                                                                                            
+                                        </_object>
+                                        <_content>
+                                            <basePrice>
+                                                <org.opencrx.kernel.product1.ProductBasePrice id="k0OQWK3rEduRlB3t5M7kmA">
+                                                    <_object>
+                                                        <price>99.989997863</price>
+                                                        <uom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</uom>
+                                                        <priceLevel>
+                                                            <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/priceLevel/tL3Nca3nEduUrK-Q7UkzAQ</_item>
+                                                        </priceLevel>
+                                                        <usage>
+                                                            <_item>100</_item>
+                                                        </usage><!-- @see CodeValueContainer name="usageproductbaseprice" -->
+                                                        <priceCurrency>840</priceCurrency><!-- @see CodeValueContainer name="currency" -->
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductBasePrice>
+                                            </basePrice>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.Product>
+                                    <org.opencrx.kernel.product1.Product id="iET0Sa3rEduRlB3t5M7kmA">
+                                        <_object>
+                                            <classification>
+                                                <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/9HABRMJLAC4WZL1Y3LDFA17MN</_item>
+                                            </classification>
+                                            <name>Ardbeg - Lord of the Isles</name>
+                                            <productNumber>Ardbeg - Lord of the Isles</productNumber>
+                                            <productState>1</productState>
+                                            <detailedDescription>25 year old Single malt whisky</detailedDescription>
+                                            <defaultUom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</defaultUom>
+                                            <description>ardbeg-534-box.jpg</description>
+                                            <itemNumber>0</itemNumber>                                            
+                                            <minMaxQuantityHandling>0</minMaxQuantityHandling>                                                                                                                                                                            
+                                        </_object>
+                                        <_content>
+                                            <basePrice>
+                                                <org.opencrx.kernel.product1.ProductBasePrice id="k0OQWa3rEduRlB3t5M7kmA">
+                                                    <_object>
+                                                        <price>150.000000000</price>
+                                                        <uom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</uom>
+                                                        <priceLevel>
+                                                            <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/priceLevel/tL3Nca3nEduUrK-Q7UkzAQ</_item>
+                                                        </priceLevel>
+                                                        <usage>
+                                                            <_item>100</_item>
+                                                        </usage><!-- @see CodeValueContainer name="usageproductbaseprice" -->
+                                                        <priceCurrency>840</priceCurrency><!-- @see CodeValueContainer name="currency" -->
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductBasePrice>
+                                            </basePrice>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.Product>
+                                    <org.opencrx.kernel.product1.Product id="iET0oa3rEduRlB3t5M7kmA">
+                                        <_object>
+                                            <classification>
+                                                <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/productClassification/9HABRMJLAC4WZL1Y3LDFA17MN</_item>
+                                            </classification>
+                                            <name>Ardbeg 1975 Limited Edition</name>
+                                            <productNumber>Ardbeg 1975 Limited Edition</productNumber>
+                                            <productState>1</productState>
+                                            <detailedDescription>Ardbeg 1975 Limited Edition - 30 Year Old</detailedDescription>
+                                            <defaultUom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</defaultUom>
+                                            <description>malt-Ardbeg-box-614_000.jpg</description>
+                                            <itemNumber>0</itemNumber>                                            
+                                            <minMaxQuantityHandling>0</minMaxQuantityHandling>                                                                                                                                                                            
+                                        </_object>
+                                        <_content>
+                                            <basePrice>
+                                                <org.opencrx.kernel.product1.ProductBasePrice id="k0OQWq3rEduRlB3t5M7kmA">
+                                                    <_object>
+                                                        <price>272.869995117</price>
+                                                        <uom>xri://@openmdx*org.opencrx.kernel.uom1/provider/CRX/segment/Standard/uom/Piece</uom>
+                                                        <priceLevel>
+                                                            <_item>xri:@openmdx:org.opencrx.kernel.product1/provider/CRX/segment/Standard/priceLevel/tL3Nca3nEduUrK-Q7UkzAQ</_item>
+                                                        </priceLevel>
+                                                        <usage>
+                                                            <_item>100</_item>
+                                                        </usage><!-- @see CodeValueContainer name="usageproductbaseprice" -->
+                                                        <priceCurrency>840</priceCurrency><!-- @see CodeValueContainer name="currency" -->
+                                                    </_object>
+                                                    <_content/>
+                                                </org.opencrx.kernel.product1.ProductBasePrice>
+                                            </basePrice>
+                                        </_content>
+                                    </org.opencrx.kernel.product1.Product>
+                                </product>
+                            </_content>
+                        </org.opencrx.kernel.product1.Segment>
+                    </segment>
+                </_content>
+            </org.openmdx.base.Provider>
+        </provider>
+    </_content>
+</org.openmdx.base.Authority>

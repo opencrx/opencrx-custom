@@ -1,0 +1,15 @@
+.mycontact-main-toolbar {
+	background-color:#FF9900;	
+}
+.mycontact-list {
+	padding:20px;
+	overflow:auto;
+}
+.mycontact-detail {
+	color: #444444;
+	border-bottom: 1px solid #ccc;
+	padding: 0px 20px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
