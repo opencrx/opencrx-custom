@@ -8,7 +8,7 @@
 			<fileset dir="../../openmdx/distribution" includes="*" />
 			<fileset dir="../../openmdx2/distribution" includes="*" />
 		</copy>
-		<delete dir="openmdx-2.15.0" />
+		<delete dir="openmdx-2.15.7" />
 		<unzip dest=".">
 			<fileset dir="." includes="*.zip" />
 		</unzip>
@@ -25,7 +25,7 @@
 			<fileset dir="../../opencrx/distribution" includes="*" />
 			<fileset dir="../../opencrx4/distribution" includes="*" />
 		</copy>
-		<delete dir="opencrx-4.0.0" />
+		<delete dir="opencrx-4.1.0" />
 		<unzip dest=".">
 			<fileset dir="." includes="*.zip" />
 		</unzip>

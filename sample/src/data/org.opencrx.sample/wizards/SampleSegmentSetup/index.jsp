@@ -167,7 +167,6 @@ org.openmdx.base.naming.*
 			try {
 				pm.currentTransaction().begin();
 				exportProfile = pm.newInstance(org.opencrx.kernel.home1.jmi1.ExportProfile.class);
-				exportProfile.refInitialize(false, false);
 				exportProfile.setName(exportProfileName);
 				exportProfile.getForClass().addAll(
 					Arrays.asList(forClass)

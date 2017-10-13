@@ -8,7 +8,7 @@
  * This software is published under the BSD license
  * as listed below.
  * 
- * Copyright (c) 2010-2014, CRIXP Corp., Switzerland
+ * Copyright (c) 2010-2017, CRIXP Corp., Switzerland
  * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without 
@@ -55,13 +55,14 @@ package org.opencrx.sample.backend;
 public class Configuration
     extends org.opencrx.kernel.aop2.Configuration {
 
-    //-----------------------------------------------------------------------
+	/**
+	 * Constructor.
+	 */
 	public Configuration(
     ) {
 		super();
 		org.opencrx.sample.backend.Base.register();
 		org.opencrx.sample.backend.Accounts.register();
-		org.opencrx.sample.backend.Exporter.register();
 		org.opencrx.sample.backend.Sample.register();
 	}
 	
