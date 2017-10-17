@@ -58,6 +58,10 @@
 			<param-name>path[2]</param-name>
 			<param-value>/IndexerServlet</param-value>
 		</init-param>
+		<init-param>
+			<param-name>path[3]</param-name>
+			<param-value>/NotifierServlet</param-value>
+		</init-param>
 		<!-- activate if WorkflowController should be initialized at startup
 		<load-on-startup>10</load-on-startup>
 -->
@@ -76,6 +80,15 @@
 	<servlet id="IndexerServlet">
 		<servlet-name>IndexerServlet</servlet-name>
 		<servlet-class>org.opencrx.kernel.workflow.servlet.IndexerServlet</servlet-class>
+	</servlet>
+	<!-- NotifierServlet -->
+	<servlet id="NotifierServlet">
+		<servlet-name>NotifierServlet</servlet-name>
+		<servlet-class>org.opencrx.sample.workflow.NotifierServlet</servlet-class>
+		<init-param>
+			<param-name>providerName</param-name>
+			<param-value>provider/CRX</param-value>
+		</init-param>
 	</servlet>
 	<servlet id="ObjectInspectorServlet">
 		<servlet-name>ObjectInspectorServlet</servlet-name>
