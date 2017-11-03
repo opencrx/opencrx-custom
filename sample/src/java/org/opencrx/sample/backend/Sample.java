@@ -145,7 +145,7 @@ public class Sample extends AbstractImpl {
     		// Get search results
     		StringBuffer links = new StringBuffer();
     		int pos = 0;
-    		while((pos = response.indexOf("<h3><a href=", pos)) > 0) {
+    		while((pos = response.indexOf("<h2><a href=", pos)) > 0) {
     			StringBuffer link = new StringBuffer();
     			char c;
     			while((c = response.charAt(pos + 13)) != '"') {
@@ -157,12 +157,12 @@ public class Sample extends AbstractImpl {
     		}
 			// ... and send alert to users
 			Base.getInstance().sendAlert(
-				gadget, 
+				gadget,
 				toUsers, 
 				"Gadget information for " + gadget.getTitle(), 
 				links.toString(),
 				(short)0, 
-				30, 
+				30,
 				null
 			);
     	} catch(Exception e) {
