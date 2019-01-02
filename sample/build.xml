@@ -2,12 +2,12 @@
 <!--
  * =======================================================================
  * = Description: openCRX Custom build.xml
- * = Copyright:   (c) 2003-2017 CRIXP AG
+ * = Copyright:   (c) 2003-2019 CRIXP AG
  * =======================================================================
  * This software is published under the BSD license
  * as listed below.
  * 
- * Copyright (c) 2004-2017, CRIXP Corp., Switzerland
+ * Copyright (c) 2004-2019, CRIXP Corp., Switzerland
  * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without 
@@ -59,13 +59,13 @@
 	<!-- Slash separated platform list, the last entry being the default -->
 	<property name="project.platform.list" value="jre-1.8"/>
 	<!-- openMDX libraries -->
-	<property name="openmdx.version" value="2.15.7"/>
+	<property name="openmdx.version" value="2.16.2"/>
 	<import file="../opt/openmdx-${openmdx.version}/ant/etc/ant/build-properties.xml"/>
 	<import file="../opt/openmdx-${openmdx.version}/ant/etc/ant/build-library.xml"/>
 	<!-- openCRX libraries -->
-	<property name="opencrx.version" value="4.1.0"/>
+	<property name="opencrx.version" value="4.2.0"/>
 	<property name="opencrx.home" location="../opt/opencrx-${opencrx.version}"/>
-	<property name="thirdparty.model.name" value="openCRX 3 ~ Core (EMF)"/>
+	<property name="thirdparty.model.name" value="openCRX 4 ~ Core (EMF)"/>
 	<property name="thirdparty.model.home" value="${opencrx.home}/core/src/model/emf/"/>
 	<path id="project.lib.classpath">
 		<path refid="openmdx.core.lib"/>
@@ -138,6 +138,7 @@
 		<mkdir dir="src/data/${data.dir}/texts"/>
 		<mkdir dir="src/data/${data.dir}/wizards"/>
 		<!-- Assert existence of ical, caldav, carddav, webdav, imap, vcard WEB-INF dir -->
+		<mkdir dir="src/data/${data.dir}/WEB-INF/classes"/>
 		<mkdir dir="src/data/${data.dir}.ical/WEB-INF"/>
 		<mkdir dir="src/data/${data.dir}.caldav/WEB-INF"/>
 		<mkdir dir="src/data/${data.dir}.carddav/WEB-INF"/>
@@ -263,14 +264,6 @@
 			</openmdx:archivefileset>
 		</openmdx:archive>
 	</target>
-	<!-- ******************************************************************* -->
-	<!-- * validate-war -->
-	<!-- ******************************************************************* -->
-	<target name="validate-war" description="Validate WARs" depends="build-init">	
-		<antcall target="-validate-war-">
-			<param name="module.name" value="opencrx-core-${web.application.name}/opencrx-core-${web.application.name}.war"/>
-		</antcall>
-  	</target>
 	<!-- ******************************************************************* -->
 	<!-- * java-archives -->
 	<!-- ******************************************************************* -->
