@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_3LUtQOjrEdmCZLe-PRgq1wa1" name="org.opencrx.sample.account1">
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_3LUtQOjrEdmCZLe-PRgq1wa1" name="org.opencrx.sample.account1">
   <packagedElement xmi:type="uml:Package" xmi:id="_wR6CsA_QEd6fDc_SP0iAng" name="org">
     <packagedElement xmi:type="uml:Package" xmi:id="_yC3C8A_QEd6fDc_SP0iAng" name="opencrx">
       <packagedElement xmi:type="uml:Package" xmi:id="_QnKusA9hEd6fDc_SP0iAng" name="sample">
         <packagedElement xmi:type="uml:Package" xmi:id="_FUXv4A_REd6fDc_SP0iAng" name="account1">
           <packagedElement xmi:type="uml:Class" xmi:id="_fxQd0A9iEd6fDc_SP0iAng" name="MyContact">
-            <generalization xmi:id="_5E3QEA9iEd6fDc_SP0iAng">
+            <generalization xmi:type="uml:Generalization" xmi:id="_5E3QEA9iEd6fDc_SP0iAng">
               <general xmi:type="uml:Class" href="../openCRX 4 ~ Core (EMF)/org.opencrx.kernel.account1.uml#_3C7B8A60016D3F3EBCD203AF"/>
             </generalization>
-            <ownedAttribute xmi:id="_i-TBkA9iEd6fDc_SP0iAng" name="hobby" visibility="public">
-              <eAnnotations xmi:id="_C-UBcA9jEd6fDc_SP0iAng" source="http://www.eclipse.org/uml2/2.0.0/UML">
-                <details xmi:id="_C-UBcQ9jEd6fDc_SP0iAng" key="list"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_i-TBkA9iEd6fDc_SP0iAng" name="hobby" visibility="public">
+              <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_C-UBcA9jEd6fDc_SP0iAng" source="http://www.eclipse.org/uml2/2.0.0/UML">
+                <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_C-UBcQ9jEd6fDc_SP0iAng" key="list"/>
               </eAnnotations>
               <type xmi:type="uml:PrimitiveType" href="../openMDX 2 ~ Core (EMF)/org.w3c.uml#_3C7B8A60016D3C8B62E40010"/>
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kFz40L5REeebN5ncZFr0Uw"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kF0f4L5REeebN5ncZFr0Uw" value="*"/>
             </ownedAttribute>
-            <ownedAttribute xmi:id="_2mbo4A_dEd6fDc_SP0iAng" name="gadget" visibility="public" type="_TNdJIA_dEd6fDc_SP0iAng" aggregation="composite" association="_2kV-MA_dEd6fDc_SP0iAng">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_2mbo4A_dEd6fDc_SP0iAng" name="gadget" visibility="public" type="_TNdJIA_dEd6fDc_SP0iAng" aggregation="composite" association="_2kV-MA_dEd6fDc_SP0iAng">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2m4U0A_dEd6fDc_SP0iAng"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2nBewA_dEd6fDc_SP0iAng" value="1"/>
-              <qualifier xmi:id="_B_ZFMA_eEd6fDc_SP0iAng" name="id" visibility="private">
+              <qualifier xmi:type="uml:Property" xmi:id="_B_ZFMA_eEd6fDc_SP0iAng" name="id" visibility="private">
                 <type xmi:type="uml:PrimitiveType" href="../openMDX 2 ~ Core (EMF)/org.w3c.uml#_3C7B8A60016D3C8B62E40010"/>
               </qualifier>
             </ownedAttribute>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_TNdJIA_dEd6fDc_SP0iAng" name="Gadget">
-            <generalization xmi:id="_vpVT4A_dEd6fDc_SP0iAng">
+            <generalization xmi:type="uml:Generalization" xmi:id="_vpVT4A_dEd6fDc_SP0iAng">
               <general xmi:type="uml:Class" href="../openCRX 4 ~ Core (EMF)/org.opencrx.kernel.base.uml#_3C7B8A60016D425406780098"/>
             </generalization>
-            <generalization xmi:id="_wDHF0A_dEd6fDc_SP0iAng">
+            <generalization xmi:type="uml:Generalization" xmi:id="_wDHF0A_dEd6fDc_SP0iAng">
               <general xmi:type="uml:Class" href="../openCRX 4 ~ Core (EMF)/org.opencrx.kernel.base.uml#_3C7B8A60016D4155CD91035D"/>
             </generalization>
-            <generalization xmi:id="_wmSEUA_dEd6fDc_SP0iAng">
+            <generalization xmi:type="uml:Generalization" xmi:id="_wmSEUA_dEd6fDc_SP0iAng">
               <general xmi:type="uml:Class" href="../openMDX 2 ~ Core (EMF)/org.openmdx.base.uml#_3C7B8A60016D3FB3D6450214"/>
             </generalization>
-            <generalization xmi:id="_YRSf8BINEd6A2bejjaM_Hg">
+            <generalization xmi:type="uml:Generalization" xmi:id="_YRSf8BINEd6A2bejjaM_Hg">
               <general xmi:type="uml:Class" href="../openCRX 4 ~ Core (EMF)/org.opencrx.kernel.base.uml#_3C7B8A60016D4205ED760135"/>
             </generalization>
-            <ownedOperation xmi:id="_KsKDQDY5Ed6xAfsctWCtag" name="sendGadgetInfo">
-              <ownedParameter xmi:id="_TJATwDY5Ed6xAfsctWCtag" name="in" type="_XFU_YDY5Ed6xAfsctWCtag"/>
-              <ownedParameter xmi:id="_HCmGIDY6Ed6xAfsctWCtag" name="Parameter1" direction="return">
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_KsKDQDY5Ed6xAfsctWCtag" name="sendGadgetInfo">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_TJATwDY5Ed6xAfsctWCtag" name="in" type="_XFU_YDY5Ed6xAfsctWCtag"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_HCmGIDY6Ed6xAfsctWCtag" name="Parameter1" direction="return">
                 <type xmi:type="uml:Class" href="../openMDX 2 ~ Core (EMF)/org.openmdx.base.uml#_3C7B8A60016D3E40433402E1"/>
               </ownedParameter>
             </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Association" xmi:id="_2kV-MA_dEd6fDc_SP0iAng" name="MyContactOwnsGadget" memberEnd="_2mbo4A_dEd6fDc_SP0iAng _2nBewQ_dEd6fDc_SP0iAng">
-            <ownedEnd xmi:id="_2nBewQ_dEd6fDc_SP0iAng" name="contact" visibility="public" type="_fxQd0A9iEd6fDc_SP0iAng" association="_2kV-MA_dEd6fDc_SP0iAng">
+            <ownedEnd xmi:type="uml:Property" xmi:id="_2nBewQ_dEd6fDc_SP0iAng" name="contact" visibility="public" type="_fxQd0A9iEd6fDc_SP0iAng" association="_2kV-MA_dEd6fDc_SP0iAng">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2nBewg_dEd6fDc_SP0iAng" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2nBeww_dEd6fDc_SP0iAng" value="1"/>
             </ownedEnd>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_XFU_YDY5Ed6xAfsctWCtag" name="SendGadgetInfoParams">
-            <eAnnotations xmi:id="_tXWIkDY8Ed6xAfsctWCtag" source="http://www.eclipse.org/uml2/2.0.0/UML">
-              <details xmi:id="_tXXWsDY8Ed6xAfsctWCtag" key="struct"/>
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tXWIkDY8Ed6xAfsctWCtag" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tXXWsDY8Ed6xAfsctWCtag" key="struct"/>
             </eAnnotations>
-            <ownedAttribute xmi:id="_bIfS0DY5Ed6xAfsctWCtag" name="toUsers" visibility="public">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_bIfS0DY5Ed6xAfsctWCtag" name="toUsers" visibility="public">
               <type xmi:type="uml:PrimitiveType" href="../openMDX 2 ~ Core (EMF)/org.w3c.uml#_3C7B8A60016D3C8B62E40010"/>
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fjVGcDY5Ed6xAfsctWCtag"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fjVtgDY5Ed6xAfsctWCtag" value="1"/>

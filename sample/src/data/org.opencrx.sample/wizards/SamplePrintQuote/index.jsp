@@ -197,7 +197,7 @@ try {
 		renderedQuote += "We will be happy to supply any further information you may need and trust that you\n";
 		renderedQuote += "call on us to fill your order, which will receive our prompt and careful attention.";			
 		// Save as file and render download link
-        String downloadFileName = quote.getName() == null ? quote.refGetPath().getBase() : quote.getName() + ".txt";
+        String downloadFileName = quote.getName() == null ? quote.refGetPath().getLastSegment().toString() : quote.getName() + ".txt";
         String mimeType = "text/plain";	        
         String location = org.opencrx.kernel.utils.Utils.getUidAsString();
 		OutputStream fileos = new FileOutputStream(app.getTempFileName(location, ""));

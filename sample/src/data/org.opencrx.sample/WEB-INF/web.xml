@@ -28,7 +28,21 @@
 	</filter-mapping>
 	<listener>
 		<listener-class>org.openmdx.portal.servlet.PortalSessionCloser</listener-class>
-	</listener>	
+	</listener>
+	<jsp-config>
+	  <taglib>
+	      <taglib-uri>http://www.openmdx.org/tags/openmdx-portal</taglib-uri>
+	      <taglib-location>/WEB-INF/openmdx-portal.tld</taglib-location>
+	    </taglib> 
+	</jsp-config>
+	<context-param>
+		<param-name>javax.faces.FACELETS_REFRESH_PERIOD</param-name>
+		<param-value>-1</param-value>
+	</context-param>
+	<context-param>
+	    <param-name>javax.faces.PROJECT_STAGE</param-name>
+	    <param-value>Production</param-value>
+	</context-param>	
 	<!-- WorkflowController -->
 	<servlet id="WorkflowController">
 		<servlet-name>WorkflowController</servlet-name>
@@ -71,24 +85,39 @@
 		<servlet-name>WorkflowHandler</servlet-name>
 		<servlet-class>org.opencrx.kernel.workflow.servlet.WorkflowHandlerServlet</servlet-class>
 	</servlet>
-	<!-- SubscriptionHandlerServlet-->
+	<!-- SubscriptionHandler-->
 	<servlet id="SubscriptionHandler">
 		<servlet-name>SubscriptionHandler</servlet-name>
 		<servlet-class>org.opencrx.kernel.workflow.servlet.SubscriptionHandlerServlet</servlet-class>
 	</servlet>
-	<!-- IndexerServlet -->
+	<!-- Indexer -->
 	<servlet id="IndexerServlet">
 		<servlet-name>IndexerServlet</servlet-name>
 		<servlet-class>org.opencrx.kernel.workflow.servlet.IndexerServlet</servlet-class>
 	</servlet>
-	<!-- NotifierServlet -->
-	<servlet id="NotifierServlet">
-		<servlet-name>NotifierServlet</servlet-name>
-		<servlet-class>org.opencrx.sample.workflow.NotifierServlet</servlet-class>
-		<init-param>
-			<param-name>providerName</param-name>
-			<param-value>provider/CRX</param-value>
-		</init-param>
+	<!-- DocumentScanner -->
+	<servlet id="DocumentScannerServlet">
+		<servlet-name>DocumentScannerServlet</servlet-name>
+		<servlet-class>org.opencrx.application.document.DocumentScannerServlet</servlet-class>
+	</servlet>
+	<!-- MailImporterServlet -->
+	<servlet id="MailImporterServlet">
+		<servlet-name>MailImporterServlet</servlet-name>
+		<servlet-class>org.opencrx.application.mail.importer.MailImporterServlet</servlet-class>
+	</servlet>
+	<!-- LDAPSynchronizer -->
+	<servlet id="LDAPSynchronizer">
+		<servlet-name>LDAPSynchronizer</servlet-name>
+		<servlet-class>org.opencrx.application.ldap.LDAPSynchronizer</servlet-class>
+	</servlet>
+	<!-- DocumentExporter -->
+	<servlet id="DocumentExporterServlet">
+		<servlet-name>DocumentExporterServlet</servlet-name>
+		<servlet-class>org.opencrx.application.document.DocumentExporterServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>FacesServlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
 	</servlet>
 	<servlet id="ObjectInspectorServlet">
 		<servlet-name>ObjectInspectorServlet</servlet-name>
@@ -362,6 +391,10 @@
 		<servlet-name>ObjectInspectorServlet</servlet-name>
 		<url-pattern>/Login</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FacesServlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>	
 	<servlet-mapping>
 		<servlet-name>WorkflowHandler</servlet-name>
 		<url-pattern>/WorkflowHandler/*</url-pattern>

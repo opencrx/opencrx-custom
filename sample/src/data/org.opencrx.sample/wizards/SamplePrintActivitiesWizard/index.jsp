@@ -111,8 +111,8 @@ org.openmdx.kernel.log.*
 %>		
 		<div id="WaitIndicator" style="width:50px;height:24px;" class="wait">&nbsp;</div>
 		<div id="SubmitArea" style="display:none;">
-			<input type="submit" name="OK" id="OK.Button" class="<%= CssClass.btn.toString() %> <%= CssClass.btnDefault.toString() %>" tabindex="9010" value="<%= app.getTexts().getOkTitle() %>" onclick="javascript:$('WaitIndicator').style.display='block';$('SubmitArea').style.display='none'; $('Command').value=this.name;this.name='---';" />
-			<input type="submit" name="Cancel" class="<%= CssClass.btn.toString() %> <%= CssClass.btnDefault.toString() %>" tabindex="9020" value="<%= app.getTexts().getCancelTitle() %>" onclick="javascript:$('WaitIndicator').style.display='block';$('SubmitArea').style.display='none'; $('Command').value=this.name;" />
+			<input type="submit" name="OK" id="OK.Button" class="<%= CssClass.btn.toString() %> <%=CssClass.btn_light.toString()%>" tabindex="9010" value="<%=app.getTexts().getOkTitle()%>" onclick="javascript:$('WaitIndicator').style.display='block';$('SubmitArea').style.display='none'; $('Command').value=this.name;this.name='---';" />
+			<input type="submit" name="Cancel" class="<%=CssClass.btn.toString()%> <%=CssClass.btn_light.toString()%>" tabindex="9020" value="<%= app.getTexts().getCancelTitle() %>" onclick="javascript:$('WaitIndicator').style.display='block';$('SubmitArea').style.display='none'; $('Command').value=this.name;" />
 		</div>
 <%					
 	}
