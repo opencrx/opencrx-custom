@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-modules id="moduleCoreId" project-version="1.5.0">
-	<wb-module deploy-name="openCRX 4 ~ Sample (jre-1.8)">
+	<wb-module deploy-name="openCRX ~ Sample (jre-1.8)">
 		<property name="context-root" value="sample"/>
 		<wb-resource deploy-path="/" source-path="src/main/resource"/>
 		<wb-resource deploy-path="/" source-path="src/main/java"/>

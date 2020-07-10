@@ -70,11 +70,11 @@ repositories {
 }
 
 group = "org.opencrx.sample"
-version = "4.3-20200619"
+version = "4.3.0"
 
 eclipse {
 	project {
-    	name = "openCRX 4 ~ Sample (jre-" + JavaVersion.current() + ")"
+    	name = "openCRX ~ Sample (jre-" + JavaVersion.current() + ")"
     }
 }
 
@@ -82,7 +82,7 @@ fun getProjectImplementationVersion(): String {
 	return project.getVersion().toString();
 }
 
-val opencrxVersion = "4.3-20200619"
+val opencrxVersion = "4.3.0"
 
 val earlib by configurations
 val opencrxCoreConfig by configurations
