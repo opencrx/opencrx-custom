@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-modules id="moduleCoreId" project-version="1.5.0">
-	<wb-module deploy-name="openCRX ~ Sample (jre-1.8)">
+	<wb-module deploy-name="openCRX 5 ~ Sample">
 		<property name="context-root" value="sample"/>
-		<wb-resource deploy-path="/" source-path="src/main/resource"/>
+		<wb-resource deploy-path="/" source-path="src/main/resources"/>
 		<wb-resource deploy-path="/" source-path="src/main/java"/>
 		<wb-resource deploy-path="/" source-path="src/data/org.opencrx.sample/WEB-INF/classes"/>
 		<wb-resource deploy-path="/" source-path="build/generated/sources/java/main"/>
-		<wb-resource deploy-path="/" source-path="/src/main/java"/>
-		<wb-resource deploy-path="/" source-path="/src/main/resource"/>
-		<wb-resource deploy-path="/" source-path="/src/data/org.opencrx.sample/WEB-INF/classes"/>
-		<wb-resource deploy-path="/" source-path="/build/generated/sources/java/main"/>
-		<wb-resource deploy-path="/" source-path="/build/jre-1.8/src/java"/>
-		<wb-resource deploy-path="/" source-path="src/main/resources"/>
-		<wb-resource deploy-path="/" source-path="/src/main/resources"/>
 	</wb-module>
 </project-modules>

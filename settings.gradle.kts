@@ -56,7 +56,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath("org.opencrx:opencrx-gradle:4.3.0")
+        classpath("org.opencrx:opencrx-gradle:5.0-20200717")
     }
 }
 
