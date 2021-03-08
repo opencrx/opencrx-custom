@@ -2,12 +2,12 @@
  * =======================================================================
  * = Description: openCRX/Sample
  * = Name: build.gradle.kts
- * = Copyright:   (c) 2020 CRIXP AG
+ * = Copyright:   (c) 2020-2021 CRIXP AG
  * =======================================================================
  * This software is published under the BSD license
  * as listed below.
  * 
- * Copyright (c) 2020, CRIXP Corp., Switzerland
+ * Copyright (c) 2020-2021 CRIXP Corp., Switzerland
  * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without 
@@ -70,7 +70,7 @@ repositories {
 }
 
 group = "org.opencrx.sample"
-version = "5.0-20200717"
+version = "5.0.1"
 
 eclipse {
 	project {
@@ -82,11 +82,15 @@ fun getProjectImplementationVersion(): String {
 	return project.getVersion().toString();
 }
 
-val opencrxVersion = "5.0-20200711"
+val opencrxVersion = "5.0.1"
 
 val earlib by configurations
 val opencrxCoreConfig by configurations
 val opencrxCoreModels by configurations
+
+// Store
+val sampleStore = configurations.create("sampleStore")
+val openmdxVersion = "2.17.7"
 
 dependencies {
 	opencrxCoreConfig("org.opencrx:opencrx-core-config:$opencrxVersion")
@@ -98,6 +102,9 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.0")
     testRuntimeOnly(earlib)
     testRuntimeOnly("org.junit.jupiter:junit-jupiter:5.6.0")
+    // store
+    sampleStore("org.opencrx:opencrx-client:$opencrxVersion")
+    sampleStore("org.openmdx:openmdx-client:$openmdxVersion")
 }
 
 sourceSets {
@@ -161,8 +168,43 @@ tasks.register<org.opencrx.gradle.ArchiveTask>("opencrx-sample.jar") {
 	)
 }
 
+tasks.register<org.opencrx.gradle.ArchiveTask>("opencrx-store.war") {
+	destinationDirectory.set(File(deliverDir, "deployment-unit"))
+	archiveFileName.set(getWebAppName("store") + ".war")
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+	includeEmptyDirs = false
+	manifest {
+	    attributes(
+	    	getManifest(
+	    		"openCRX/Store WAR",
+	    		"opencrx-store.war"
+	    	)
+	    )
+	}
+	from(File("src/war/opencrx-sample-store.war")) { include("**/*.*"); exclude("pics/**"); filter { line -> archiveFilter(line) } }
+	from(File("src/war/opencrx-sample-store.war")) { include("pics/**"); }
+	from(File(buildDir, "classes/java/main")) { include("org/opencrx/sample/store/**"); into("WEB-INF/classes") }
+    from(sampleStore) { into("WEB-INF/lib"); }
+}
+
+tasks.register<org.opencrx.gradle.ArchiveTask>("opencrx-mycontact.war") {
+	destinationDirectory.set(File(deliverDir, "deployment-unit"))
+	archiveFileName.set(getWebAppName("mycontact") + ".war")
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+	includeEmptyDirs = false
+	manifest {
+	    attributes(
+	    	getManifest(
+	    		"openCRX/Mycontact WAR",
+	    		"opencrx-mycontact.war"
+	    	)
+	    )
+	}
+	from(File("src/war/opencrx-sample-mycontact.war")) { include("**/*.*"); filter { line -> archiveFilter(line) } }
+}
+
 tasks.register("deliverables") {
-	dependsOn("opencrx-sample.jar")
+	dependsOn("opencrx-sample.jar","opencrx-store.war","opencrx-mycontact.war")
 }
 
 distributions {
@@ -176,8 +218,9 @@ distributions {
             from("etc") { into("opencrx/etc") }
             // rootDir
             from("..") { include("*.properties", "*.kts" ) }
-            // jre-1.8 
+            // jre-11
             from("../jre-" + JavaVersion.current() + "/opencrx/lib") { into("jre-" + JavaVersion.current() + "/opencrx/lib") }
         }
     }
 }
+

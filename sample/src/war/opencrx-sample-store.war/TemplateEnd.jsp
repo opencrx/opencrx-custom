@@ -5,7 +5,7 @@
                 </div>
 				<div class="clear"></div>
 				<div id="footer">
-					<p>©2014 www.opencrx.org</p>
+					<p>©2014-2021 www.opencrx.org</p>
 				</div>
 			</div>
 
