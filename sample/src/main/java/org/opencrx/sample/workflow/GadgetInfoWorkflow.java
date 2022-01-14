@@ -2,12 +2,9 @@
  * ====================================================================
  * Project:     openCRX/Sample
  * Description: GadgetInfoWorkflow
- * Owner:       CRIXP AG, Switzerland, http://www.crixp.com
+ * Owner:       the original authors.
  * ====================================================================
  *
- * Copyright (c) 2008-2017, CRIXP AG, Switzerland
- * All rights reserved.
- * 
  * ------------------
  * 
  * This product includes software developed by the Apache Software

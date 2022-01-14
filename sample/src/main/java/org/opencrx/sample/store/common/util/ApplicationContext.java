@@ -4,15 +4,12 @@
  * Name:        $Id: ApplicationContext.java,v 1.2 2010/08/30 15:35:41 wfro Exp $
  * Description: Application context
  * Revision:    $Revision: 1.2 $
- * Owner:       CRIXP AG, Switzerland, http://www.crixp.com
+ * Owner:       the original authors.
  * Date:        $Date: 2010/08/30 15:35:41 $
  * ====================================================================
  *
  * This software is published under the BSD license
  * as listed below.
- * 
- * Copyright (c) 2004-2010, CRIXP Corp., Switzerland
- * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without 
  * modification, are permitted provided that the following conditions 
@@ -26,7 +23,7 @@
  * the documentation and/or other materials provided with the
  * distribution.
  * 
- * * Neither the name of CRIXP Corp. nor the names of the contributors
+ * * Neither the name of the openCRX team nor the names of the contributors
  * to openCRX may be used to endorse or promote products derived
  * from this software without specific prior written permission
  * 
