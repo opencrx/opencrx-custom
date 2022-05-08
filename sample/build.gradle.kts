@@ -49,15 +49,12 @@ plugins {
 	java
 	`java-library`
 	eclipse
-	war
-	distribution
 }
 apply(plugin = "ear")
 apply(plugin = "opencrx")
 
 repositories {
 	mavenCentral()
-	jcenter()
     maven {
         url = uri("https://www.openmdx.org/repos/releases")
     }
@@ -67,7 +64,7 @@ repositories {
 }
 
 group = "org.opencrx.sample"
-version = "5.2.1"
+version = "5.2-20220506"
 
 eclipse {
 	project {
@@ -79,9 +76,11 @@ fun getProjectImplementationVersion(): String {
 	return project.getVersion().toString();
 }
 
-val opencrxVersion = "5.2.1"
+val opencrxVersion = "5.2-20220506"
 
 val earlib by configurations
+val testRuntimeOnly by configurations
+testRuntimeOnly.extendsFrom(earlib)
 val opencrxCoreConfig by configurations
 val opencrxCoreModels by configurations
 
@@ -97,7 +96,6 @@ dependencies {
 	earlib(fileTree("../jre-" + JavaVersion.current() + "/" + project.getName() + "/lib") { include("*.jar") })
 	// test
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.0")
-    testRuntimeOnly(earlib)
     testRuntimeOnly("org.junit.jupiter:junit-jupiter:5.6.0")
     // store
     sampleStore("org.opencrx:opencrx-client:$opencrxVersion")
@@ -128,7 +126,12 @@ tasks {
 	}
 }
 
+tasks.withType<Copy> {
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE    
+}
+
 tasks.register<Copy>("prepare-wizards") {
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE    
 	from(zipTree(configurations.getByName("opencrxCoreConfig").singleFile)) {
 		include("org.opencrx/WEB-INF/classes/**/*.java");
 		eachFile { relativePath = RelativePath(true, *relativePath.segments.drop(3).toTypedArray()) }
@@ -142,8 +145,10 @@ tasks.withType<JavaCompile> {
 }
 
 tasks.register<org.opencrx.gradle.ArchiveTask>("opencrx-sample.jar") {
+    dependsOn("classes")
 	destinationDirectory.set(File(deliverDir, "lib"))
 	archiveFileName.set("opencrx-sample.jar")
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     includeEmptyDirs = false		
 	manifest {
         attributes(
@@ -166,6 +171,7 @@ tasks.register<org.opencrx.gradle.ArchiveTask>("opencrx-sample.jar") {
 }
 
 tasks.register<org.opencrx.gradle.ArchiveTask>("opencrx-store.war") {
+    dependsOn("classes")
 	destinationDirectory.set(File(deliverDir, "deployment-unit"))
 	archiveFileName.set(getWebAppName("store") + ".war")
 	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
@@ -204,20 +210,6 @@ tasks.register("deliverables") {
 	dependsOn("opencrx-sample.jar","opencrx-store.war","opencrx-mycontact.war")
 }
 
-distributions {
-    main {
-    	distributionBaseName.set("opencrx-" + getProjectImplementationVersion() + "-sample-jre-" + JavaVersion.current())
-        contents {
-        	// .
-        	from(".") { into("opencrx"); include("LICENSE", "*.LICENSE", "NOTICE", "*.properties", "build*.*", "*.xml", "*.kts") }
-            from("src") { into("opencrx/src") }
-            // etc
-            from("etc") { into("opencrx/etc") }
-            // rootDir
-            from("..") { include("*.properties", "*.kts" ) }
-            // jre-11
-            from("../jre-" + JavaVersion.current() + "/opencrx/lib") { into("jre-" + JavaVersion.current() + "/opencrx/lib") }
-        }
-    }
+tasks.named<Ear>("ear") {
+    dependsOn("opencrx.ear")
 }
-

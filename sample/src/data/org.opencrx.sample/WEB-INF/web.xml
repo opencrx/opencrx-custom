@@ -105,11 +105,6 @@
 		<servlet-name>MailImporterServlet</servlet-name>
 		<servlet-class>org.opencrx.application.mail.importer.MailImporterServlet</servlet-class>
 	</servlet>
-	<!-- LDAPSynchronizer -->
-	<servlet id="LDAPSynchronizer">
-		<servlet-name>LDAPSynchronizer</servlet-name>
-		<servlet-class>org.opencrx.application.ldap.LDAPSynchronizer</servlet-class>
-	</servlet>
 	<!-- DocumentExporter -->
 	<servlet id="DocumentExporterServlet">
 		<servlet-name>DocumentExporterServlet</servlet-name>
