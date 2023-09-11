@@ -133,7 +133,7 @@ public final class Converter
     public static final Boolean getBoolean(
     	final boolean b
     ) {
-        return new Boolean(b);
+        return Boolean.valueOf(b);
     }
 
     public static final double getDouble(
@@ -159,7 +159,7 @@ public final class Converter
     public static final Double getDouble(
     	final double dbl
     ) {
-        return new Double(dbl);
+        return Double.valueOf(dbl);
     }
 
     public static final float getFloat(
@@ -184,7 +184,7 @@ public final class Converter
     public static final Float getFloat(
     	final float f
     ) {
-        return new Float(f);
+        return Float.valueOf(f);
     }
 
     public static final int getInteger(
@@ -213,7 +213,7 @@ public final class Converter
     public static final Integer getInteger(
     	final int i
     ) {
-        return new Integer(i);
+        return Integer.valueOf(i);
     }
 
     public static Date getDate(

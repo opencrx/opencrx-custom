@@ -182,7 +182,7 @@ public final class Product implements IStandardObject {
             priceLevel.setName(name);
             priceLevel.setDescription(name);
             priceLevel.setPriceCurrency(context.getConfiguredCurrencyCode());
-            priceLevel.getPriceUsage().add(new Short(Keys.PRICE_USAGE_CONSUMER));
+            priceLevel.getPriceUsage().add(Short.valueOf(Keys.PRICE_USAGE_CONSUMER));
             context.getProductSegment(pm).addPriceLevel(
                 false,
                 uuids.next().toString(),
@@ -197,7 +197,7 @@ public final class Product implements IStandardObject {
         if(basePrice == null) {
             basePrice = pm.newInstance(org.opencrx.kernel.product1.jmi1.ProductBasePrice.class);
             basePrice.setPriceCurrency(context.getConfiguredCurrencyCode());
-            basePrice.getUsage().add(new Short(Keys.PRICE_USAGE_CONSUMER));
+            basePrice.getUsage().add(Short.valueOf(Keys.PRICE_USAGE_CONSUMER));
             basePrice.getPriceLevel().add(priceLevel);
             basePrice.setUom(
                 (org.opencrx.kernel.uom1.jmi1.Uom)pm.getObjectById("xri:@openmdx:org.opencrx.kernel.uom1/provider/" + context.getProviderName() + "/segment/Root/uom/Unit")

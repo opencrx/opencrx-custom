@@ -191,7 +191,7 @@ public final class OrderManager {
 	            this.context.getAccountSegment(pm).getAccount(userID.getUuid());
 	        SalesOrderQuery query = (SalesOrderQuery)pm.newQuery(SalesOrder.class);
 	        query.thereExistsCustomer().equalTo(customer);
-	        query.contractState().equalTo(new Short((short)400)/* buying */);        
+	        query.contractState().equalTo(Short.valueOf((short)400)/* buying */);        
 	        query.orderByCreatedAt().descending();
 	        List<SalesOrder> salesOrders = this.context.getContractSegment(pm).getSalesOrder(query);
 	        if(!salesOrders.isEmpty()) {
@@ -240,7 +240,7 @@ public final class OrderManager {
     	try {
     		pm = this.context.newPersistenceManager();
 	        SalesOrderQuery query = (SalesOrderQuery)pm.newQuery(SalesOrder.class);
-	        query.contractState().equalTo(new Short((short)430)/* on hold */);
+	        query.contractState().equalTo(Short.valueOf((short)430)/* on hold */);
 	        query.name().like(Keys.STORE_SCHEMA + ".*");
 	        Map<String,Object> pendingSalesOrders = new LinkedHashMap<String,Object>();
 	        List<SalesOrder> salesOrders = this.context.getContractSegment(pm).getSalesOrder(query);

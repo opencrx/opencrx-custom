@@ -64,7 +64,7 @@ repositories {
 }
 
 group = "org.opencrx.sample"
-version = "5.2.2"
+version = "5.3-20230911"
 
 eclipse {
 	project {
@@ -76,7 +76,7 @@ fun getProjectImplementationVersion(): String {
 	return project.getVersion().toString();
 }
 
-val opencrxVersion = "5.2.2"
+val opencrxVersion = "5.3-20230911"
 
 val earlib by configurations
 val testRuntimeOnly by configurations
@@ -86,7 +86,7 @@ val opencrxCoreModels by configurations
 
 // Store
 val sampleStore = configurations.create("sampleStore")
-val openmdxVersion = "2.18.0"
+val openmdxVersion = "2.18.6"
 
 dependencies {
 	opencrxCoreConfig("org.opencrx:opencrx-core-config:$opencrxVersion")
@@ -107,7 +107,7 @@ sourceSets {
         java {
             srcDir("src/main/java")
             srcDir("src/data/org.opencrx.sample/WEB-INF/classes")
-            srcDir("$buildDir/generated/sources/java/main")
+            srcDir(layout.buildDirectory.dir("generated/sources/java/main"))
         }
         resources {
         	srcDir("src/main/resources")
@@ -136,7 +136,7 @@ tasks.register<Copy>("prepare-wizards") {
 		include("org.opencrx/WEB-INF/classes/**/*.java");
 		eachFile { relativePath = RelativePath(true, *relativePath.segments.drop(3).toTypedArray()) }
 	}
-	into("$buildDir/generated/sources/java/main")
+	into(layout.buildDirectory.dir("generated/sources/java/main"))
 	includeEmptyDirs = false	
 }
 
@@ -159,9 +159,9 @@ tasks.register<org.opencrx.gradle.ArchiveTask>("opencrx-sample.jar") {
         )
     }
 	from(
-		File(buildDir, "classes/java/main"),
-		File(buildDir, "src/main/resources"),
-		zipTree(File(buildDir, "generated/sources/model/opencrx-sample.openmdx-xmi.zip")),
+		layout.buildDirectory.dir("classes/java/main"),
+		layout.buildDirectory.dir("src/main/resources"),
+		zipTree(layout.buildDirectory.dir("generated/sources/model/opencrx-sample.openmdx-xmi.zip")),
 		"src/main/resources"
 	)
 	include(
@@ -186,7 +186,7 @@ tasks.register<org.opencrx.gradle.ArchiveTask>("opencrx-store.war") {
 	}
 	from(File("src/war/opencrx-sample-store.war")) { include("**/*.*"); exclude("pics/**"); filter { line -> archiveFilter(line) } }
 	from(File("src/war/opencrx-sample-store.war")) { include("pics/**"); }
-	from(File(buildDir, "classes/java/main")) { include("org/opencrx/sample/store/**"); into("WEB-INF/classes") }
+	from(layout.buildDirectory.dir("classes/java/main")) { include("org/opencrx/sample/store/**"); into("WEB-INF/classes") }
     from(sampleStore) { into("WEB-INF/lib"); }
 }
 
