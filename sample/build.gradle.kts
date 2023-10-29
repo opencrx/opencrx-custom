@@ -64,7 +64,7 @@ repositories {
 }
 
 group = "org.opencrx.sample"
-version = "5.3-20230911"
+version = "5.3.0"
 
 eclipse {
 	project {
@@ -76,7 +76,7 @@ fun getProjectImplementationVersion(): String {
 	return project.getVersion().toString();
 }
 
-val opencrxVersion = "5.3-20230911"
+val opencrxVersion = "5.3.0"
 
 val earlib by configurations
 val testRuntimeOnly by configurations
@@ -86,7 +86,7 @@ val opencrxCoreModels by configurations
 
 // Store
 val sampleStore = configurations.create("sampleStore")
-val openmdxVersion = "2.18.6"
+val openmdxVersion = "2.18.8"
 
 dependencies {
 	opencrxCoreConfig("org.opencrx:opencrx-core-config:$opencrxVersion")
@@ -95,8 +95,8 @@ dependencies {
 	earlib("org.opencrx:opencrx-core:$opencrxVersion")
 	earlib(fileTree("../jre-" + JavaVersion.current() + "/" + project.getName() + "/lib") { include("*.jar"); exclude("opencrx-client.jar", "opencrx-core-config.jar", "opencrx-core.jar", "*-sources.jar" ) } )
 	// test
-    testImplementation("org.junit.jupiter:junit-jupiter:5.6.0")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter:5.6.0")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter:5.10.0")
     // store
     sampleStore("org.opencrx:opencrx-client:$opencrxVersion")
     sampleStore("org.openmdx:openmdx-client:$openmdxVersion")
