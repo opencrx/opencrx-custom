@@ -45,7 +45,6 @@
  * openMDX (http://www.openmdx.org/)
  */
 
-
 import java.util.*
 import java.io.*
 
