@@ -70,6 +70,10 @@ repositories {
 group = "org.opencrx.sample"
 version = "5.3.0"
 
+var env = Properties()
+env.load(FileInputStream(File(project.getRootDir(), "build.properties")))
+val targetPlatform = JavaVersion.valueOf(env.getProperty("target.platform"))
+
 eclipse {
 	project {
     	name = "openCRX 5 ~ Sample"
@@ -80,10 +84,9 @@ fun getProjectImplementationVersion(): String {
 	return project.getVersion().toString();
 }
 
-var env = Properties()
-env.load(FileInputStream(File(project.getRootDir(), "build.properties")))
-val targetPlatform = JavaVersion.valueOf(env.getProperty("target.platform"))
-val deliverDir = File(project.getRootDir(), "jre-" + targetPlatform + "/" + project.getName())
+fun getDeliverDir(): File {
+	return File(project.getRootDir(), "jre-" + targetPlatform + "/" + project.getName());
+}
 
 val opencrxVersion = "5.3.0"
 
@@ -102,7 +105,7 @@ dependencies {
     opencrxCoreModels("org.opencrx:opencrx-core-models:$opencrxVersion")
 	implementation("org.opencrx:opencrx-core:$opencrxVersion")
 	earlib("org.opencrx:opencrx-core:$opencrxVersion")
-	earlib(fileTree(File(deliverDir, "lib")) { include("*.jar"); exclude("opencrx-client.jar", "opencrx-core-config.jar", "opencrx-core.jar", "*-sources.jar" ) } )
+	earlib(fileTree(File(getDeliverDir(), "lib")) { include("*.jar"); exclude("opencrx-client.jar", "opencrx-core-config.jar", "opencrx-core.jar", "*-sources.jar" ) } )
 	// test
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter:5.10.0")
