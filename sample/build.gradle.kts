@@ -45,6 +45,10 @@
  * openMDX (http://www.openmdx.org/)
  */
 
+
+import java.util.*
+import java.io.*
+
 plugins {
 	java
 	`java-library`
@@ -76,6 +80,11 @@ fun getProjectImplementationVersion(): String {
 	return project.getVersion().toString();
 }
 
+var env = Properties()
+env.load(FileInputStream(File(project.getRootDir(), "build.properties")))
+val targetPlatform = JavaVersion.valueOf(env.getProperty("target.platform"))
+val deliverDir = File(project.getRootDir(), "jre-" + targetPlatform + "/" + project.getName())
+
 val opencrxVersion = "5.3.0"
 
 val earlib by configurations
@@ -93,7 +102,7 @@ dependencies {
     opencrxCoreModels("org.opencrx:opencrx-core-models:$opencrxVersion")
 	implementation("org.opencrx:opencrx-core:$opencrxVersion")
 	earlib("org.opencrx:opencrx-core:$opencrxVersion")
-	earlib(fileTree("../jre-" + JavaVersion.current() + "/" + project.getName() + "/lib") { include("*.jar"); exclude("opencrx-client.jar", "opencrx-core-config.jar", "opencrx-core.jar", "*-sources.jar" ) } )
+	earlib(fileTree(File(deliverDir, "lib")) { include("*.jar"); exclude("opencrx-client.jar", "opencrx-core-config.jar", "opencrx-core.jar", "*-sources.jar" ) } )
 	// test
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter:5.10.0")
