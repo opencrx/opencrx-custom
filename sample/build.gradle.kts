@@ -67,7 +67,7 @@ repositories {
 }
 
 group = "org.opencrx.sample"
-version = "5.3.0"
+version = "5.3.2"
 
 var env = Properties()
 env.load(FileInputStream(File(project.getRootDir(), "build.properties")))
@@ -87,7 +87,7 @@ fun getDeliverDir(): File {
 	return File(project.getRootDir(), "jre-" + targetPlatform + "/" + project.getName());
 }
 
-val opencrxVersion = "5.3.0"
+val opencrxVersion = "5.3.2"
 
 val earlib by configurations
 val testRuntimeOnly by configurations
@@ -97,7 +97,7 @@ val opencrxCoreModels by configurations
 
 // Store
 val sampleStore = configurations.create("sampleStore")
-val openmdxVersion = "2.18.8"
+val openmdxVersion = "2.18.10"
 
 dependencies {
 	opencrxCoreConfig("org.opencrx:opencrx-core-config:$opencrxVersion")
