@@ -67,7 +67,7 @@ repositories {
 }
 
 group = "org.opencrx.sample"
-version = "5.3.2"
+version = "6.0.0"
 
 var env = Properties()
 env.load(FileInputStream(File(project.getRootDir(), "build.properties")))
@@ -75,7 +75,7 @@ val targetPlatform = JavaVersion.valueOf(env.getProperty("target.platform"))
 
 eclipse {
 	project {
-    	name = "openCRX 5 ~ Sample"
+    	name = "openCRX 6 ~ Sample"
     }
 }
 
@@ -84,10 +84,10 @@ fun getProjectImplementationVersion(): String {
 }
 
 fun getDeliverDir(): File {
-	return File(project.getRootDir(), "jre-" + targetPlatform + "/" + project.getName());
+	return layout.buildDirectory.getAsFile().get();
 }
 
-val opencrxVersion = "5.3.2"
+val opencrxVersion = "6.0.0"
 
 val earlib by configurations
 val testRuntimeOnly by configurations
@@ -97,7 +97,7 @@ val opencrxCoreModels by configurations
 
 // Store
 val sampleStore = configurations.create("sampleStore")
-val openmdxVersion = "2.18.10"
+val openmdxVersion = "4.19.2"
 
 dependencies {
 	opencrxCoreConfig("org.opencrx:opencrx-core-config:$opencrxVersion")
@@ -110,7 +110,7 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter:5.10.0")
     // store
     sampleStore("org.opencrx:opencrx-client:$opencrxVersion")
-    sampleStore("org.openmdx:openmdx-client:$openmdxVersion")
+    sampleStore("org.openmdx:openmdx-base:$openmdxVersion")
 }
 
 sourceSets {
@@ -157,7 +157,8 @@ tasks.withType<JavaCompile> {
 
 tasks.register<org.opencrx.gradle.ArchiveTask>("opencrx-sample.jar") {
     dependsOn("classes")
-	destinationDirectory.set(File(deliverDir, "lib"))
+	mustRunAfter("opencrx-core.jar","opencrx-client.jar","opencrx-core-config.jar","opencrx-config.jar")
+	destinationDirectory.set(File(getDeliverDir(), "lib"))
 	archiveFileName.set("opencrx-sample.jar")
 	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     includeEmptyDirs = false		
@@ -182,8 +183,8 @@ tasks.register<org.opencrx.gradle.ArchiveTask>("opencrx-sample.jar") {
 }
 
 tasks.register<org.opencrx.gradle.ArchiveTask>("opencrx-store.war") {
-    dependsOn("classes")
-	destinationDirectory.set(File(deliverDir, "deployment-unit"))
+    dependsOn("opencrx-sample.jar")
+	destinationDirectory.set(File(getDeliverDir(), "deployment-unit"))
 	archiveFileName.set(getWebAppName("store") + ".war")
 	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 	includeEmptyDirs = false
@@ -202,7 +203,9 @@ tasks.register<org.opencrx.gradle.ArchiveTask>("opencrx-store.war") {
 }
 
 tasks.register<org.opencrx.gradle.ArchiveTask>("opencrx-mycontact.war") {
-	destinationDirectory.set(File(deliverDir, "deployment-unit"))
+    dependsOn("opencrx-sample.jar")
+	mustRunAfter("opencrx-store.war")
+	destinationDirectory.set(File(getDeliverDir(), "deployment-unit"))
 	archiveFileName.set(getWebAppName("mycontact") + ".war")
 	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 	includeEmptyDirs = false
@@ -218,7 +221,7 @@ tasks.register<org.opencrx.gradle.ArchiveTask>("opencrx-mycontact.war") {
 }
 
 tasks.register("deliverables") {
-	dependsOn("opencrx-sample.jar","opencrx-store.war","opencrx-mycontact.war")
+	dependsOn("opencrx-store.war","opencrx-mycontact.war")
 }
 
 tasks.named<Ear>("ear") {

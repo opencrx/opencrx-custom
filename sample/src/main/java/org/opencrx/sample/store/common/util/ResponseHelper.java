@@ -49,7 +49,7 @@
  */
 package org.opencrx.sample.store.common.util;
 
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 
 import org.opencrx.sample.store.common.IStandardObject;
 import org.opencrx.sample.store.common.PrimaryKey;

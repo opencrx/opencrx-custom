@@ -55,7 +55,7 @@ package org.opencrx.sample.store.common.util;
 import java.util.Locale;
 
 import javax.jdo.PersistenceManagerFactory;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpSession;
 
 import org.opencrx.kernel.utils.Utils;
 import org.openmdx.base.mof.cci.Model_1_0;
