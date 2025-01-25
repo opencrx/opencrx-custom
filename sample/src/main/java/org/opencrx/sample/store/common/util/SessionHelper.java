@@ -49,8 +49,8 @@
  */
 package org.opencrx.sample.store.common.util;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 import org.opencrx.sample.store.objects.Order;
 import org.opencrx.sample.store.objects.User;

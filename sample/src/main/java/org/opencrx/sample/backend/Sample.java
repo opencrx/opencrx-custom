@@ -60,7 +60,7 @@ import java.util.List;
 
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
-import javax.resource.ResourceException;
+import jakarta.resource.ResourceException;
 
 import org.opencrx.kernel.account1.cci2.AccountQuery;
 import org.opencrx.kernel.account1.cci2.PostalAddressQuery;
