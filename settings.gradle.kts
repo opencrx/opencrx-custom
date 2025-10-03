@@ -52,7 +52,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath("org.opencrx:opencrx-buildSrc:6.0.2")
+        classpath("org.opencrx:opencrx-buildSrc:6.0.3")
     }
 }
 
